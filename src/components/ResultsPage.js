@@ -6,7 +6,7 @@ const Results = ({ isCorrect, nextQuestion }) => {
       <h1>Result</h1>
       <p>{isCorrect ? 'Correct！' : 'Incorrect'}</p>
       <button onClick={nextQuestion}>Next</button>
-      <button onClick={() => window.location.href = '/'}>Return Home</button>
+      <button onClick={() => window.location.href = process.env.PUBLIC_URL + '/'}>Return Home</button>
     </div>
   );
 };
