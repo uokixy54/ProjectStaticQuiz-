@@ -52,7 +52,7 @@ function App() {
     <div className="App">
       {page === 'home' && <Home startQuiz={startQuiz} />}
       {page === 'quiz' && <Quiz question={questions[currentQuestionIndex]} submitAnswers={submitAnswers} />}
-      {page === 'results' && <Results isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
+      {page === 'results' && <Results question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
     </div>
   );
 }
