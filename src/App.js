@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Home from './components/HomePage';
 import Quiz from './components/QuizPage';
 import Results from './components/ResultsPage';
-import questionsData from './data/questions.json';
+// import questionsData from './data/questions.json';
 import './App.css';
 
 function App() {
