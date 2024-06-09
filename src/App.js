@@ -44,11 +44,15 @@ function App() {
     }
   };
 
+  const returnHome = () => {
+    setPage('home');
+  }
+
   return (
     <div className="App">
       {page === 'home' && <Home startQuiz={startQuiz} />}
       {page === 'quiz' && <Quiz question={questions[currentQuestionIndex]} submitAnswers={submitAnswers} />}
-      {page === 'results' && <Results isCorrect={isCorrect} nextQuestion={nextQuestion} />}
+      {page === 'results' && <Results isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
     </div>
   );
 }
