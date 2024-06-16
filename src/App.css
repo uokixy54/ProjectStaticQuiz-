@@ -1,20 +1,114 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
+  background-color: #F4F5F7;
 }
 
 h1 {
   color: #333;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin: 10px;
+div {
+  margin: 0.5em auto;
+  width: 90%;
+  text-align: left;
 }
 
-div {
-  margin: 20px auto;
+/* QuestionSelectors Style */
+.question-selector {
+  display: flex;
+  position: relative;
+  background-color: rgba(85, 132, 185, 0.3);
+  border-radius: 100vw;
+  padding: 1rem ;
+  font-family: sans-serif;
+  font-size: 16px;
+  transition: 0.5s;
+}
+.question-selector:hover {
+  background-color: rgb(39, 78, 156);
+  color: #fff;
+}
+
+/* Coreect & Incorrect Style */
+.correct {
+  color: green;
+  position: relative;
+}
+.correct::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background-color: rgba(0, 128, 0, 0.3);
+  z-index: -1;
+}
+.incorrect {
+  color: red;
+  position: relative;
+}
+.incorrect::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30%;
+  background-color: rgba(255, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* Buttons Style */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	overflow: hidden;
+	text-decoration: none;
+	height: 4rem;
+	width: 120px;
+	margin: 1rem 5%;
+	padding: 0 4rem;
+  border: none;
+	border-radius: 100vw;
+	background-size: 400%;
+  background-color: rgb(39, 78, 156);
+  color: rgb(253, 253, 255);
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+button:hover::before {
+  transform: scaleX(1);
+}
+button:hover {
+	color: #fff;
+}
+button span {
+  position: relative;
+  z-index: 1;
+}
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
   width: 100%;
-  text-align: left;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(39, 172, 217, 1) 10.8%,
+    rgba(18, 83, 229, 1) 94.3%
+  );
+  transition: all 0.475s;
 }

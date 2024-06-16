@@ -4,7 +4,10 @@ const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
   return (
     <div>
       <h1>Result</h1>
-      <p>{isCorrect ? 'Correct！' : 'Incorrect'}</p>
+      <h3 className={isCorrect ? 'correct' : 'incorrect'}>
+        {isCorrect ? 'Correct！' : 'Incorrect'}
+      </h3>
+      
       {question.explanations.map((explanation, index) => (
         <div key={index}>
           {explanation}
@@ -12,8 +15,12 @@ const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
           {question.descriptions[index]}
         </div>
       ))}
-      <button onClick={nextQuestion}>Next</button>
-      <button onClick={returnHome}>Return Home</button>
+
+      <div className='button-container'>
+        <button onClick={nextQuestion}><span>Next</span></button>
+        <button onClick={returnHome}><span>Return Home</span></button>
+      </div>
+      
     </div>
   );
 };

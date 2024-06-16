@@ -18,7 +18,11 @@ const Quiz = ({ question, submitAnswers }) => {
     <div>
       <h1>Question</h1>
       <Question question={question} handleCheckboxChange={handleCheckboxChange} />
-      <button onClick={() => submitAnswers(selectedChoices)}>Confirm</button>
+
+      <div className='button-container'>
+        <button onClick={() => submitAnswers(selectedChoices)}><span>Confirm</span></button>
+      </div>
+
     </div>
   );
 };
