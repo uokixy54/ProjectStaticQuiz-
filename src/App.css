@@ -61,12 +61,6 @@ div {
 }
 
 /* Buttons Style */
-.home-button-container {
-  display: flex;
-  justify-content: space-between;
-  margin: 0;
-  width: 55%;
-}
 .button-container {
   display: flex;
   justify-content: center;
@@ -120,6 +114,11 @@ button::before {
 }
 
 /* PullDown Style */
+.home-select-container {
+  display: flex;
+  justify-content: left;
+  margin: 0;
+}
 select {
   appearance: none;
   -moz-appearance: none;

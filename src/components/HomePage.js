@@ -19,7 +19,7 @@ const Home = ({ startQuiz }) => {
       <h3>Version 24C2 Changes</h3>
       <p>Add a Pull-Down to select the type of certification.</p>
       
-      <div className='home-button-container'>
+      <div className='home-select-container'>
         <div className='slect-container'>
           <select value={selectedValue} onChange={handleChange}>
             <option value="SalesforceCertifiedAdministrator">Salesforce Certified Administrator</option>
@@ -27,9 +27,10 @@ const Home = ({ startQuiz }) => {
             <option value="SalesforcePlatformDeveloperI">Salesforce Platform Developer I</option>
           </select>
         </div>
+      </div>
+      <div className='button-container'>
         <button onClick={handleStartQuiz}><span>Start</span></button>
       </div>
-      
     </div>
   );
 };
