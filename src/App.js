@@ -12,9 +12,18 @@ function App() {
   const [isCorrect, setIsCorrect] = useState(false);
   const [duplicateNum, setDuplicateNum] = useState(null);
   
-  const startQuiz = async () => {
-    const response = await fetch(process.env.PUBLIC_URL + '/data/questions.json');
-    const data = await response.json();
+  const startQuiz = async (selectedValue) => {
+    let data = "";
+    if (selectedValue === 'SalesforceCertifiedAdministrator') {
+      const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforceCertifiedAdministratorQuestions.json');
+      data = await response.json();
+    } else if (selectedValue === 'SalesforcePlatformAppBuilder') {
+      const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformAppBuilderQuestions.json');
+      data = await response.json();
+    } else if (selectedValue === 'SalesforcePlatformDeveloperI') {
+      const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformDeveloperIQuestions.json');
+      data = await response.json();
+    }
     const randomNum = Math.round(Math.random() * (data.length - 1));
 
     setQuestions(data);

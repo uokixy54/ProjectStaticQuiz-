@@ -1,0 +1,26 @@
+[
+    {
+        "question": "",
+        "choices": ["", "", "", ""],
+        "correct": [""],
+        "explanations": ["","","",""],
+        "descriptions": [
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    {
+        "question": "LightningコンポーネントからApexメソッドおよびプロパティへのアクセスを可能にするアノテーションはどれですか。",
+        "choices": ["@RestResource", "@AuraEnabled", "@RemoteAction", "@Httplnvocable"],
+        "correct": ["@AuraEnabled"],
+        "explanations": ["〇 @RestResource","〇 @AuraEnabled","〇 @RemoteAction","〇 @Httplnvocable"],
+        "descriptions": [
+            "これは不正解です。@RestResource アノテーションは、ApexクラスをRESTful Webサービスとして公開するために使用されます。Lightningコンポーネントから直接このアノテーションを用いてApexメソッドにアクセスすることは推奨されません。",
+            "これは正解です。LightningコンポーネントからApexメソッドおよびプロパティへのアクセスを可能にするアノテーションは「@AuraEnabled」です。このアノテーションをApexメソッドまたはプロパティに追加すると、そのメソッドやプロパティがLightningコンポーネントから呼び出し可能になります。",
+            "これは不正解です。@RemoteAction アノテーションは、VisualforceページからApexメソッドにアクセスするために使用されます。しかし、Lightningコンポーネントからは使用できません。",
+            "これは不正解です。@Httplnvocable アノテーションは、存在しないアノテーションです。"
+        ]
+    }
+]

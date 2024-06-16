@@ -61,6 +61,12 @@ div {
 }
 
 /* Buttons Style */
+.home-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  width: 55%;
+}
 .button-container {
   display: flex;
   justify-content: center;
@@ -111,4 +117,40 @@ button::before {
     rgba(18, 83, 229, 1) 94.3%
   );
   transition: all 0.475s;
+}
+
+/* PullDown Style */
+select {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  outline: none;
+}
+.slect-container {
+  background: #cfcedb;
+  margin: 0;
+  height: 40px;
+  width: 300px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+.slect-container::after {
+  position: absolute;
+  content: '';
+  width: 8px;
+  height: 8px;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  z-index: -1;
 }
