@@ -15,7 +15,7 @@ function App() {
   const startQuiz = async (selectedValue) => {
     let data = "";
     if (selectedValue === 'SalesforceCertifiedAdministrator') {
-      const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforceCertifiedAdministratorQuestions.json');
+      const response = await fetch(process.env.PUBLIC_URL + '/data/testdata0619.json');
       data = await response.json();
     } else if (selectedValue === 'SalesforcePlatformAppBuilder') {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformAppBuilderQuestions.json');

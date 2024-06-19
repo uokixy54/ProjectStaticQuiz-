@@ -17,6 +17,7 @@ const Quiz = ({ question, submitAnswers }) => {
   return (
     <div>
       <h1>Question</h1>
+      <h2>No.{question.number}</h2>
       <Question question={question} handleCheckboxChange={handleCheckboxChange} />
 
       <div className='button-container'>

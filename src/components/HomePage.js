@@ -13,7 +13,7 @@ const Home = ({ startQuiz }) => {
 
   return (
     <div>
-      <h1>Salesforce Certification TEST 24C2</h1>
+      <h1>Salesforce Certification TEST DEV24C3</h1>
       <h3>Version 24C1 Changes</h3>
       <p>Add a few more questions, Random sampling of questions, and Change button style.</p>
       <h3>Version 24C2 Changes</h3>

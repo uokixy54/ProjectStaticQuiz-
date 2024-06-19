@@ -4,6 +4,7 @@ const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
   return (
     <div>
       <h1>Result</h1>
+      <h2>No.{question.number}</h2>
       <h3 className={isCorrect ? 'correct' : 'incorrect'}>
         {isCorrect ? 'Correct！' : 'Incorrect'}
       </h3>
