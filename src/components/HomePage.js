@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Home = ({ startQuiz, wrongQuestions }) => {
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   const [selectedValue, setSelectedValue] = useState('SalesforceCertifiedAdministrator');
 
   const handleChange = (event) => {

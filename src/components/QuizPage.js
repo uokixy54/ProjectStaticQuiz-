@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Question from './QuestionPage';
 
 const Quiz = ({ question, submitAnswers }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   const [selectedChoices, setSelectedChoices] = useState([]);
 
   const handleCheckboxChange = (choice) => {

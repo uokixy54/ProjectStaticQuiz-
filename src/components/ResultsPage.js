@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+  
   return (
     <div>
       <h1>Result</h1>
