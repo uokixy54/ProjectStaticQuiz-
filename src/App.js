@@ -11,11 +11,12 @@ function App() {
   const [userAnswers, setUserAnswers] = useState([]);
   const [isCorrect, setIsCorrect] = useState(false);
   const [duplicateNum, setDuplicateNum] = useState(null);
+  const [wrongQuestions, setWrongQuestions] = useState([]);
   
   const startQuiz = async (selectedValue) => {
     let data = "";
     if (selectedValue === 'SalesforceCertifiedAdministrator') {
-      const response = await fetch(process.env.PUBLIC_URL + '/data/testdata0619.json');
+      const response = await fetch(process.env.PUBLIC_URL + '/data/testdata0621.json');
       data = await response.json();
     } else if (selectedValue === 'SalesforcePlatformAppBuilder') {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformAppBuilderQuestions.json');
@@ -29,6 +30,7 @@ function App() {
     setQuestions(data);
     setCurrentQuestionIndex(randomNum);
     setDuplicateNum(randomNum);
+    setWrongQuestions([]);
 
     setPage('quiz');
   };
@@ -37,6 +39,11 @@ function App() {
     const currentQuestion = questions[currentQuestionIndex];
     const correctAnswers = currentQuestion.correct;
     const isCorrect = correctAnswers.every(answer => selectedChoices.includes(answer)) && selectedChoices.length === correctAnswers.length;
+
+    if (!isCorrect) {
+      setWrongQuestions([...wrongQuestions, currentQuestion]);
+    }
+
     setIsCorrect(isCorrect);
     setUserAnswers([...userAnswers, selectedChoices]);
     setPage('results');
@@ -64,7 +71,7 @@ function App() {
 
   return (
     <div className="App">
-      {page === 'home' && <Home startQuiz={startQuiz} />}
+      {page === 'home' && <Home startQuiz={startQuiz} wrongQuestions={wrongQuestions} />}
       {page === 'quiz' && <Quiz question={questions[currentQuestionIndex]} submitAnswers={submitAnswers}/>}
       {page === 'results' && <Results question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
     </div>

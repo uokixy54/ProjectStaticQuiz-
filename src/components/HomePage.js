@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Home = ({ startQuiz }) => {
+const Home = ({ startQuiz, wrongQuestions }) => {
   const [selectedValue, setSelectedValue] = useState('SalesforceCertifiedAdministrator');
 
   const handleChange = (event) => {
@@ -13,7 +13,7 @@ const Home = ({ startQuiz }) => {
 
   return (
     <div>
-      <h1>Salesforce Certification TEST DEV24C3</h1>
+      <h1>Salesforce Certification DEV24C3</h1>
       <h3>Version 24C1 Changes</h3>
       <p>Add a few more questions, Random sampling of questions, and Change button style.</p>
       <h3>Version 24C2 Changes</h3>
@@ -28,6 +28,12 @@ const Home = ({ startQuiz }) => {
           </select>
         </div>
       </div>
+      <h3>Wrong Questions Number</h3>
+      {wrongQuestions.map((wrongQuestion, index) => (
+        <div key={index} className='WrongQuestionsNumber'>
+          No.{wrongQuestion.number}
+        </div>
+      ))}
       <div className='button-container'>
         <button onClick={handleStartQuiz}><span>Start</span></button>
       </div>

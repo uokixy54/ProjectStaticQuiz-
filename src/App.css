@@ -14,6 +14,11 @@ div {
   text-align: left;
 }
 
+.WrongQuestionsNumber {
+  margin: auto 3em;
+  text-align: left;
+}
+
 /* QuestionSelectors Style */
 .question-selector {
   display: flex;
