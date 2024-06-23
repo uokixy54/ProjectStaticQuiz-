@@ -1,19 +1,36 @@
 [
     {
-        "question": "",
-        "choices": ["", "", "", ""],
-        "correct": [""],
-        "explanations": ["","","",""],
+        "number": "1",
+        "previous-code": [""],
+        "question": "デバッグログに書き込まれるときのxの値は何ですか。",
+        "following-code": [
+            "Integer x = 0;",
+            "do {",
+            "    x = 1;",
+            "    x++;",
+            "} while (x < 1);",
+            "System.debug(x);"
+        ],
+        "choices": ["0", "1", "2", "3"],
+        "choices-code": ["", "", "", ""],
+        "correct": ["2"],
+        "explanations": ["デバッグログには 2 が表示されます。以下がコードの実行フローです。", "", "", "", "", ""],
         "descriptions": [
-            "",
-            "",
-            "",
-            ""
+            "1| x の初期値は0です。",
+            "2| do ループが実行されます。",
+            "3| x に1が代入されます。",
+            "4| x の値がインクリメントされ、現在の値は2になります。",
+            "5| while 条件式 x < 1 が評価されます。しかし、この時点で x の値は2なので条件式は false となります。",
+            "6| ループを抜けて System.debug(x); が実行され、デバッグログには 2 が表示されます。"
         ]
     },
     {
+        "number": "2",
+        "previous-code": [""],
         "question": "LightningコンポーネントからApexメソッドおよびプロパティへのアクセスを可能にするアノテーションはどれですか。",
+        "following-code": [""],
         "choices": ["@RestResource", "@AuraEnabled", "@RemoteAction", "@Httplnvocable"],
+        "choices-code": ["", "", "", ""],
         "correct": ["@AuraEnabled"],
         "explanations": ["〇 @RestResource","〇 @AuraEnabled","〇 @RemoteAction","〇 @Httplnvocable"],
         "descriptions": [
