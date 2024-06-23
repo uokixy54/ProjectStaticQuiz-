@@ -16,8 +16,9 @@ const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
       
       {question.explanations.map((explanation, index) => (
         <div key={index}>
-          {explanation}
-          <br/>
+          <div className='bord'>
+            {explanation}
+          </div>
           {question.descriptions[index]}
         </div>
       ))}
