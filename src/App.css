@@ -8,10 +8,31 @@ h1 {
   color: #333;
 }
 
+h2 {
+  color: #333;
+}
+
+h3 {
+  color: #333;
+}
+
 div {
   margin: 0.5em auto;
   width: 90%;
   text-align: left;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
 }
 
 .WrongQuestionsNumber {
@@ -157,4 +178,123 @@ select {
   border-bottom: 2px solid #fff;
   border-right: 2px solid #fff;
   z-index: -1;
+}
+
+@media (max-width: 500px) {
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #F4F5F7;
+    font-size: 10px;
+    margin: 0;
+  }
+  
+  h1 {
+    color: #333;
+  }
+
+  h2 {
+    color: #333;
+    font-size: 13px;
+  }
+
+  h3 {
+    color: #333;
+  }
+  
+  div {
+    margin: 6px;
+  }
+
+  span {
+    font-size: 13px;
+  }
+
+  #root {
+    margin: 10px;
+    width: 100%;
+  }
+
+  .App {
+    margin: 10px;
+    width: 100%;
+  }
+
+  /* QuestionSelectors Style */
+  label.question-selector {
+    display: flex;
+    justify-items: center;
+    position: relative;
+    background-color: rgba(85, 132, 185, 0.3);
+    border-radius: 100vw;
+    padding: 6px;
+    font-family: sans-serif;
+    font-size: 10px;
+    transition: 0.5s;
+  }
+
+  /* Buttons Style */
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    padding: 10px 0px;
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 10vw;
+    background-size: 400%;
+    background-color: rgb(39, 78, 156);
+    color: rgb(253, 253, 255);
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  /* PullDown Style */
+  .home-select-container {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+  }
+  select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 13px;
+    width: 90%;
+    height: 100%;
+    padding: 0 10px;
+    outline: none;
+  }
+  .slect-container {
+    background: #cfcedb;
+    margin: 0;
+    height: 30px;
+    width: 120px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+  }
+  .slect-container::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 8px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    z-index: -1;
+  }
 }
