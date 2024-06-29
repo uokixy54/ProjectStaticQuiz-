@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import Login from './components/LoginPage';
 import Home from './components/HomePage';
 import Quiz from './components/QuizPage';
 import Results from './components/ResultsPage';
 import './App.css';
 
 function App() {
-  const [page, setPage] = useState('home');
+  const [page, setPage] = useState('login');
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
@@ -13,10 +14,25 @@ function App() {
   const [duplicateNum, setDuplicateNum] = useState(null);
   const [wrongQuestions, setWrongQuestions] = useState([]);
   
+  const authUser = async (password) => {
+    console.log('$$$');
+    const response = await fetch(process.env.PUBLIC_URL + '/data/userinfo.json');
+    const AUTHENTICATION_CODE = await response.json();
+
+    AUTHENTICATION_CODE.forEach(userInfo => {
+      if (userInfo.authcode === password) {
+        setPage('home');
+      } else {
+        setPage('login');
+      }
+    });
+
+  };
+
   const startQuiz = async (selectedValue) => {
     let data = "";
     if (selectedValue === 'SalesforceCertifiedAdministrator') {
-      const response = await fetch(process.env.PUBLIC_URL + '/data/testdata0621.json');
+      const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforceCertifiedAdministratorQuestions.json');
       data = await response.json();
     } else if (selectedValue === 'SalesforcePlatformAppBuilder') {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformAppBuilderQuestions.json');
@@ -71,6 +87,7 @@ function App() {
 
   return (
     <div className="App">
+      {page === 'login' && <Login authUser={authUser} />}
       {page === 'home' && <Home startQuiz={startQuiz} wrongQuestions={wrongQuestions} />}
       {page === 'quiz' && <Quiz question={questions[currentQuestionIndex]} submitAnswers={submitAnswers}/>}
       {page === 'results' && <Results question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
