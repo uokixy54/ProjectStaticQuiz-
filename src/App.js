@@ -15,7 +15,6 @@ function App() {
   const [wrongQuestions, setWrongQuestions] = useState([]);
   
   const authUser = async (password) => {
-    console.log('$$$');
     const response = await fetch(process.env.PUBLIC_URL + '/data/userinfo.json');
     const AUTHENTICATION_CODE = await response.json();
 
@@ -28,7 +27,9 @@ function App() {
     });
 
   };
-
+  // const restartQuiz = () => {
+    
+  // }
   const startQuiz = async (selectedValue) => {
     let data = "";
     if (selectedValue === 'SalesforceCertifiedAdministrator') {

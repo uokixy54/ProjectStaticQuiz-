@@ -40,9 +40,60 @@ code {
   margin: 1em 0 0 0;
 }
 
+.correctResult {
+  font-weight: bold;
+  color: red;
+}
+
 .WrongQuestionsNumber {
   margin: auto 3em;
   text-align: left;
+}
+
+/* Form Style */
+form {
+  width: 70%;
+  margin: 0 auto;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #a5a5a5;
+}
+.form-row:last-child {
+  border-bottom: none;
+}
+.form-label {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+.form-label label {
+  font-weight: bold;
+}
+.form-label span {
+  margin-left: 10px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #b52916;
+}
+.form-row > input {
+  background-color: #cecece;
+  border: none;
+  border-radius: 3px;
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #333;
+  flex-grow: 1;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-size: 14px;
 }
 
 /* QuestionSelectors Style */
@@ -63,6 +114,8 @@ code {
 
 /* Coreect & Incorrect Style */
 .correct {
+  margin: 1em 0 0 0;
+  font-weight: bold;
   color: green;
   position: relative;
 }
@@ -77,6 +130,8 @@ code {
   z-index: -1;
 }
 .incorrect {
+  margin: 1em 0 0 0;
+  font-weight: bold;
   color: red;
   position: relative;
 }

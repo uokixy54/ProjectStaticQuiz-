@@ -14,16 +14,27 @@ const Login = ({ authUser }) => {
 
     return (
         <div>
+            <h1>Sign In</h1>
+            <h2>Welcome Back!</h2>
+            <p>Enter your authentication code to use all of site features.</p>
             <form onSubmit={handleSubmit}>
-                <h1>Authentication System</h1>
-                <h2>You need to verify...</h2>
-                <input
-                    type = "password"
-                    id = "password"
-                    value = {password}
-                    onChange = {(event) => setPassword(event.target.value)}
-                />
-                <button type="submit"><span>Submit</span></button>
+                <div class="form-row">
+                    <div class="form-label">
+                        <label for="name">Authentication Code</label>
+                        <span>Required</span>
+                    </div>
+                        <input
+                            type = "password"
+                            id = "password"
+                            placeholder="Authentication Code"
+                            value = {password}
+                            onChange = {(event) => setPassword(event.target.value)}
+                            required
+                        />
+                </div>
+                <div className='button-container'>
+                    <button type="submit"><span>Submit</span></button>
+                </div>
             </form>
         </div>
     );

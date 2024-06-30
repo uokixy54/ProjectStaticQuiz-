@@ -10,14 +10,15 @@ const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
     <div>
       <h1>Result</h1>
       <h2>No.{question.number}</h2>
+      <h2>{question.question}</h2>
       <h3 className={isCorrect ? 'correct' : 'incorrect'}>
         {isCorrect ? 'Correct！' : 'Incorrect'}
       </h3>
       
       {question.explanations.map((explanation, index) => (
         <div key={index}>
-          <div className='bord'>
-            {explanation}
+          <div className={question.correct.includes(explanation) ? 'correct' : 'bord'}>
+          〇 {explanation}
           </div>
           {question.descriptions[index]}
         </div>

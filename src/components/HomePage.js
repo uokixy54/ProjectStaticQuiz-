@@ -12,6 +12,9 @@ const Home = ({ startQuiz, wrongQuestions }) => {
     setSelectedValue(event.target.value);
   };
 
+  const handleReStartQuiz = () => {
+
+  }
   const handleStartQuiz = () => {
     startQuiz(selectedValue);
   };
@@ -40,6 +43,7 @@ const Home = ({ startQuiz, wrongQuestions }) => {
         </div>
       ))}
       <div className='button-container'>
+        {/* <button onClick={handleReStartQuiz}><span>ReStart</span></button> */}
         <button onClick={handleStartQuiz}><span>Start</span></button>
       </div>
     </div>
