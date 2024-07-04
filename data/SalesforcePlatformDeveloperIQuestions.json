@@ -32,7 +32,7 @@
         "choices": ["@RestResource", "@AuraEnabled", "@RemoteAction", "@Httplnvocable"],
         "choices-code": ["", "", "", ""],
         "correct": ["@AuraEnabled"],
-        "explanations": ["〇 @RestResource","〇 @AuraEnabled","〇 @RemoteAction","〇 @Httplnvocable"],
+        "explanations": ["@RestResource","@AuraEnabled","@RemoteAction","@Httplnvocable"],
         "descriptions": [
             "これは不正解です。@RestResource アノテーションは、ApexクラスをRESTful Webサービスとして公開するために使用されます。Lightningコンポーネントから直接このアノテーションを用いてApexメソッドにアクセスすることは推奨されません。",
             "これは正解です。LightningコンポーネントからApexメソッドおよびプロパティへのアクセスを可能にするアノテーションは「@AuraEnabled」です。このアノテーションをApexメソッドまたはプロパティに追加すると、そのメソッドやプロパティがLightningコンポーネントから呼び出し可能になります。",
