@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Home = ({ startQuiz, wrongQuestions }) => {
+const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
   
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -13,7 +13,7 @@ const Home = ({ startQuiz, wrongQuestions }) => {
   };
 
   const handleReStartQuiz = () => {
-
+    restartQuiz();
   }
   const handleStartQuiz = () => {
     startQuiz(selectedValue);
@@ -43,8 +43,8 @@ const Home = ({ startQuiz, wrongQuestions }) => {
         </div>
       ))}
       <div className='button-container'>
-        {/* <button onClick={handleReStartQuiz}><span>ReStart</span></button> */}
         <button onClick={handleStartQuiz}><span>Start</span></button>
+        <button onClick={handleReStartQuiz}><span>ReStart</span></button>
       </div>
     </div>
   );

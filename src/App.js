@@ -27,22 +27,36 @@ function App() {
     });
 
   };
-  // const restartQuiz = () => {
-    
-  // }
+
+  const restartQuiz = () => {
+    if (wrongQuestions.length > 0) {
+      const randomNum = Math.round(Math.random() * (wrongQuestions.length - 1));
+
+      setQuestions(wrongQuestions);
+      setCurrentQuestionIndex(randomNum);
+      setDuplicateNum(randomNum);
+      setWrongQuestions([]);
+
+      setPage('quiz');
+    }
+  }
+
   const startQuiz = async (selectedValue) => {
     let data = "";
     if (selectedValue === 'SalesforceCertifiedAdministrator') {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforceCertifiedAdministratorQuestions.json');
       data = await response.json();
+
     } else if (selectedValue === 'SalesforcePlatformAppBuilder') {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformAppBuilderQuestions.json');
       data = await response.json();
+
     } else if (selectedValue === 'SalesforcePlatformDeveloperI') {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformDeveloperIQuestions.json');
       data = await response.json();
+
     }
-    const randomNum = Math.round(Math.random() * (data.length - 1));
+  const randomNum = Math.round(Math.random() * (data.length - 1));
 
     setQuestions(data);
     setCurrentQuestionIndex(randomNum);
@@ -89,7 +103,7 @@ function App() {
   return (
     <div className="App">
       {page === 'login' && <Login authUser={authUser} />}
-      {page === 'home' && <Home startQuiz={startQuiz} wrongQuestions={wrongQuestions} />}
+      {page === 'home' && <Home startQuiz={startQuiz} restartQuiz={restartQuiz} wrongQuestions={wrongQuestions} />}
       {page === 'quiz' && <Quiz question={questions[currentQuestionIndex]} submitAnswers={submitAnswers}/>}
       {page === 'results' && <Results question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
     </div>
