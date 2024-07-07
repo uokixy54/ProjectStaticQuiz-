@@ -38,12 +38,12 @@ code {
 progress  {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-color: #fff;
+  background-color: #c9c8c8;
   width: 80%;
   border-radius: 8px;
 }
 ::-webkit-progress-bar {
-  background-color: #fff;
+  background-color: #c9c8c8;
   border-radius: 8px;
 }
 ::-webkit-progress-value {
