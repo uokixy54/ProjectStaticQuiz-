@@ -47,7 +47,8 @@ const Question = ({ question, handleCheckboxChange }) => {
         </pre>
         )}
 
-        <h2>{question.question}</h2>
+        <h2 style={{ whiteSpace: 'pre-line' }}>{question.question}</h2>
+
         {question['following-code'] && question['following-code'].length > 0 && (
           <pre>
             <code className="java">

@@ -13,16 +13,16 @@ const Results = ({ question, questionLength, currentQuestionNum,  isCorrect, nex
       <progress id='progress' max={questionLength} value={currentQuestionNum}></progress>
       <label for="progress">  {currentQuestionNum}/{questionLength}問</label>
       <div className='question-container'>
-        <h2>{question.question}</h2>
+        <h2 style={{ whiteSpace: 'pre-line' }}>{question.question}</h2>
       </div>
       <h3 className={isCorrect ? 'correct' : 'incorrect'}>
         {isCorrect ? 'Correct！' : 'Incorrect'}
       </h3>
       
       {question.explanations.map((explanation, index) => (
-        <div key={index}>
+        <div key={index} style={{ whiteSpace: 'pre-line' }}>
           <div className={question.correct.includes(explanation) ? 'correct' : 'bord'}>
-          {explanation !== '' ? '〇 ' : ''}{explanation}
+            {explanation !== '' ? '〇 ' : ''}{explanation}
           </div>
           {question.descriptions[index]}
         </div>

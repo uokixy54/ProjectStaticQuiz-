@@ -349,7 +349,7 @@ select {
     border-top:solid 5px #8B968D;
     border-bottom:solid 5px #8B968D;
     background-color:#E5F2F1; */
-    margin: 1em auto;                       /* smart phone style */
+    margin: 1em auto;                         /* smart phone style */
     padding: 5px;                             /* smart phone style */
     background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),linear-gradient(90deg,  transparent 19px, #ccc 20px);
     background-size: 20px 20px;
@@ -448,7 +448,7 @@ select {
     margin-left: 10px;
     padding: 2px 6px;
     border-radius: 3px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     color: #fff;
     background-color: #b52916;
@@ -457,8 +457,9 @@ select {
     background-color: #cecece;
     border: none;
     border-radius: 3px;
-    padding: 15px 20px;
-    font-size: 16px;
+    margin: 10px;                         /* smart phone style */
+    padding: 10px 20px;                   /* smart phone style */
+    font-size: 13px;
     color: #333;
     flex-grow: 1;
   }
