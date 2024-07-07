@@ -83,6 +83,7 @@ code {
 progress  {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   background-color: #c9c8c8;
   width: 80%;
   border-radius: 8px;
@@ -394,6 +395,7 @@ select {
   progress  {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     background-color: #c9c8c8;
     width: 80%;
     border-radius: 8px;
