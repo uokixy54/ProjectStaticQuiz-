@@ -8,6 +8,12 @@ const Quiz = ({ currentQuestionNum, questionLength, question, submitAnswers }) =
     window.scrollTo(0, 0)
   }, []);
 
+  useEffect(() => {
+    const progress = document.getElementById('progress');
+    progress.max = questionLength;
+    progress.value = currentQuestionNum - 1;
+  }, [currentQuestionNum]);
+
   const handleCheckboxChange = (choice) => {
     setSelectedChoices(prev => {
       if (prev.includes(choice)) {
