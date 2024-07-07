@@ -1,7 +1,7 @@
 [
     {
         "number": "1",
-        "previous-code": [""],
+        "previous-code": [],
         "question": "デバッグログに書き込まれるときのxの値は何ですか。",
         "following-code": [
             "Integer x = 0;",
@@ -26,9 +26,9 @@
     },
     {
         "number": "2",
-        "previous-code": [""],
+        "previous-code": [],
         "question": "LightningコンポーネントからApexメソッドおよびプロパティへのアクセスを可能にするアノテーションはどれですか。",
-        "following-code": [""],
+        "following-code": [],
         "choices": ["@RestResource", "@AuraEnabled", "@RemoteAction", "@Httplnvocable"],
         "choices-code": ["", "", "", ""],
         "correct": ["@AuraEnabled"],
