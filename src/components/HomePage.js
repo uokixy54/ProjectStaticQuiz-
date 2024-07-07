@@ -22,11 +22,15 @@ const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
   return (
     <div>
       <h1>Salesforce Certification DEV24C3</h1>
-      <h3>Version 24C1 Changes</h3>
-      <p>Add a few more questions, Random sampling of questions, and Change button style.</p>
-      <h3>Version 24C2 Changes</h3>
-      <p>Add a Pull-Down to select the type of certification.</p>
+      <div className='update-info-container'>
+        <h2>Update Infomation</h2>
+        <h3>Version 24C1 Changes</h3>
+        <p>Add a few more questions, Random sampling of questions, and Change button style.</p>
+        <h3>Version 24C2 Changes</h3>
+        <p>Add a Pull-Down to select the type of certification.</p>
+      </div>
       
+      <h3>Select Certification Course</h3>
       <div className='home-select-container'>
         <div className='slect-container'>
           <select value={selectedValue} onChange={handleChange}>

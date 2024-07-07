@@ -33,40 +33,50 @@ const Question = ({ question, handleCheckboxChange }) => {
 
   return (
     <div>
-      {/* <pre>
-        <code className="java">
-          {question['previous-code'] && question['previous-code'].map((code, index) => (
-            <React.Fragment key={index}>
-              {code}
-              {'\n'}
-            </React.Fragment>
-          ))}
-        </code>
-      </pre> */}
-      <h2>{question.question}</h2>
-      <pre>
-        <code className="java">
-          {question['following-code'] && question['following-code'].map((code, index) => (
-            <React.Fragment key={index}>
-              {code}
-              {'\n'}
-            </React.Fragment>
-          ))}
-        </code>
-      </pre>
-      {question.choices.map((choice, index) => (
-        <div key={index}>
-          <label className='question-selector'>
-            <input
-              type="checkbox"
-              value={choice}
-              onChange={() => handleCheckboxChange(choice)}
-            />
-            {choice}
-          </label>
-          <br/>
-        </div>
-      ))}
+      <div className='question-container'>
+        {question['previous-code'] && question['previous-code'].length > 0 && (
+        <pre>
+          <code className="java">
+            {question['previous-code'].map((code, index) => (
+              <React.Fragment key={index}>
+                {code}
+                {'\n'}
+              </React.Fragment>
+            ))}
+          </code>
+        </pre>
+        )}
+
+        <h2>{question.question}</h2>
+        {question['following-code'] && question['following-code'].length > 0 && (
+          <pre>
+            <code className="java">
+              {question['following-code'].map((code, index) => (
+                <React.Fragment key={index}>
+                  {code}
+                  {'\n'}
+                </React.Fragment>
+              ))}
+            </code>
+          </pre>
+        )}
+      </div>
+
+      <div className='question-selector-container'>
+        {question.choices.map((choice, index) => (
+          <div key={index}>
+            <label className='question-selector'>
+              <input
+                type="checkbox"
+                value={choice}
+                onChange={() => handleCheckboxChange(choice)}
+              />
+              {choice}
+            </label>
+            <br/>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

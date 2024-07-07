@@ -18,9 +18,9 @@ const Login = ({ authUser }) => {
             <h2>Welcome Back!</h2>
             <p>Enter your authentication code to use all of site features.</p>
             <form onSubmit={handleSubmit}>
-                <div class="form-row">
-                    <div class="form-label">
-                        <label for="name">Authentication Code</label>
+                <div className="form-row">
+                    <div className="form-label">
+                        <label htmlFor="name">Authentication Code</label>
                         <span>Required</span>
                     </div>
                         <input

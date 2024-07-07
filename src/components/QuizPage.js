@@ -23,7 +23,7 @@ const Quiz = ({ currentQuestionNum, questionLength, question, submitAnswers }) =
       <h1>Question</h1>
       <h2>No.{question.number}</h2>
       <progress id='progress' max={questionLength} value={currentQuestionNum - 1}></progress>
-      <label for="progress">  {currentQuestionNum}/{questionLength}問</label>
+      <label htmlFor="progress">  {currentQuestionNum}/{questionLength}問</label>
       <Question question={question} handleCheckboxChange={handleCheckboxChange} />
 
       <div className='button-container'>

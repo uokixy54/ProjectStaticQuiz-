@@ -12,7 +12,9 @@ const Results = ({ question, questionLength, currentQuestionNum,  isCorrect, nex
       <h2>No.{question.number}</h2>
       <progress id='progress' max={questionLength} value={currentQuestionNum}></progress>
       <label for="progress">  {currentQuestionNum}/{questionLength}問</label>
-      <h2>{question.question}</h2>
+      <div className='question-container'>
+        <h2>{question.question}</h2>
+      </div>
       <h3 className={isCorrect ? 'correct' : 'incorrect'}>
         {isCorrect ? 'Correct！' : 'Incorrect'}
       </h3>
