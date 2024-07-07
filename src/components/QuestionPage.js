@@ -5,25 +5,25 @@ import 'highlight.js/styles/default.css';
 
 hljs.registerLanguage('java', java);
 
-const shuffleArray = (array) => {
-  let newArray = array.slice();
+// const shuffleArray = (array) => {
+//   let newArray = array.slice();
 
-  for (let i = 0; i < newArray.length - 1; i++) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-  }
-  return newArray;
-}
+//   for (let i = 0; i < newArray.length - 1; i++) {
+//     const j = Math.floor(Math.random() * (i + 1));
+//     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+//   }
+//   return newArray;
+// }
 
 const Question = ({ question, handleCheckboxChange }) => {
-  const [choices, setChoices] = useState([]);
+  // const [choices, setChoices] = useState([]);
 
   // 再レンダリングして状態を最新にする
-  useEffect(() => {
-    const shuffledChoices = shuffleArray(question.choices);
-    setChoices(shuffledChoices);
-    question.choices = shuffledChoices; 
-  }, []);
+  // useEffect(() => {
+  //   const shuffledChoices = shuffleArray(question.choices);
+  //   setChoices(shuffledChoices);
+  //   question.choices = shuffledChoices; 
+  // }, []);
 
   useEffect(() => {
     document.querySelectorAll('pre code').forEach((block) => {

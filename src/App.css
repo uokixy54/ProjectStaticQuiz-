@@ -35,6 +35,36 @@ code {
   font-family: Consolas, "Courier New", monospace;
 }
 
+progress  {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  width: 80%;
+  border-radius: 8px;
+}
+::-webkit-progress-bar {
+  background-color: #fff;
+  border-radius: 8px;
+}
+::-webkit-progress-value {
+  background: linear-gradient(
+    82.3deg,
+    rgba(39, 172, 217, 1) 10.8%,
+    rgba(18, 83, 229, 1) 94.3%
+  );
+  width: 80%;
+  border-radius: 8px;
+}
+::-moz-progress-bar {
+  background: linear-gradient(
+    82.3deg,
+    rgba(39, 172, 217, 1) 10.8%,
+    rgba(18, 83, 229, 1) 94.3%
+  );
+  width: 80%;
+  border-radius: 8px;
+}
+
 .bord {
   font-weight: bold;
   margin: 1em 0 0 0;

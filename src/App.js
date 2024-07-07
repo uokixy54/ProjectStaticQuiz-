@@ -7,6 +7,8 @@ import './App.css';
 
 function App() {
   const [page, setPage] = useState('login');
+  const [currentQuestionNum, setCurrentQuestionNum] = useState();
+  const [questionLength, setQuestionLength] = useState();
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
@@ -32,10 +34,12 @@ function App() {
     if (wrongQuestions.length > 0) {
       const randomNum = Math.round(Math.random() * (wrongQuestions.length - 1));
 
+      setQuestionLength(wrongQuestions.length);
       setQuestions(wrongQuestions);
       setCurrentQuestionIndex(randomNum);
       setDuplicateNum(randomNum);
       setWrongQuestions([]);
+      setCurrentQuestionNum(1);
 
       setPage('quiz');
     }
@@ -58,10 +62,12 @@ function App() {
     }
   const randomNum = Math.round(Math.random() * (data.length - 1));
 
+    setQuestionLength(data.length);
     setQuestions(data);
     setCurrentQuestionIndex(randomNum);
     setDuplicateNum(randomNum);
     setWrongQuestions([]);
+    setCurrentQuestionNum(1);
 
     setPage('quiz');
   };
@@ -90,6 +96,7 @@ function App() {
       setCurrentQuestionIndex(randomNum);
       setDuplicateNum(randomNum);
 
+      setCurrentQuestionNum(currentQuestionNum + 1);
       setPage('quiz');
     } else {
       setPage('home');
@@ -104,8 +111,8 @@ function App() {
     <div className="App">
       {page === 'login' && <Login authUser={authUser} />}
       {page === 'home' && <Home startQuiz={startQuiz} restartQuiz={restartQuiz} wrongQuestions={wrongQuestions} />}
-      {page === 'quiz' && <Quiz question={questions[currentQuestionIndex]} submitAnswers={submitAnswers}/>}
-      {page === 'results' && <Results question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
+      {page === 'quiz' && <Quiz currentQuestionNum={currentQuestionNum} questionLength={questionLength} question={questions[currentQuestionIndex]} submitAnswers={submitAnswers}/>}
+      {page === 'results' && <Results currentQuestionNum={currentQuestionNum} questionLength={questionLength} question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
     </div>
   );
 }

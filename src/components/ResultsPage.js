@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
+const Results = ({ question, questionLength, currentQuestionNum,  isCorrect, nextQuestion, returnHome }) => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -10,6 +10,8 @@ const Results = ({ question, isCorrect, nextQuestion, returnHome }) => {
     <div>
       <h1>Result</h1>
       <h2>No.{question.number}</h2>
+      <progress id='progress' max={questionLength} value={currentQuestionNum}></progress>
+      <label for="progress">  {currentQuestionNum}/{questionLength}問</label>
       <h2>{question.question}</h2>
       <h3 className={isCorrect ? 'correct' : 'incorrect'}>
         {isCorrect ? 'Correct！' : 'Incorrect'}

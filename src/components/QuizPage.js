@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Question from './QuestionPage';
 
-const Quiz = ({ question, submitAnswers }) => {
+const Quiz = ({ currentQuestionNum, questionLength, question, submitAnswers }) => {
+  const [selectedChoices, setSelectedChoices] = useState([]);
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
-  
-  const [selectedChoices, setSelectedChoices] = useState([]);
 
   const handleCheckboxChange = (choice) => {
     setSelectedChoices(prev => {
@@ -23,6 +22,8 @@ const Quiz = ({ question, submitAnswers }) => {
     <div>
       <h1>Question</h1>
       <h2>No.{question.number}</h2>
+      <progress id='progress' max={questionLength} value={currentQuestionNum - 1}></progress>
+      <label for="progress">  {currentQuestionNum}/{questionLength}問</label>
       <Question question={question} handleCheckboxChange={handleCheckboxChange} />
 
       <div className='button-container'>
