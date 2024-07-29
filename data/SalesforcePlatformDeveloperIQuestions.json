@@ -34,5 +34,21 @@
             "これは不正解です。@RemoteAction アノテーションは、VisualforceページからApexメソッドにアクセスするために使用されます。しかし、Lightningコンポーネントからは使用できません。",
             "これは不正解です。@Httplnvocable アノテーションは、存在しないアノテーションです。"
         ]
+    },
+    {
+        "number": "179",
+        "previous-code": [],
+        "question": "以下のコードを実行した場合、xの値は何になりますか。",
+        "following-code": ["Boolean isOK;\nInteger x;\nString theString = 'Hello';\n\nif (isOK == false && theString == 'Hello') {\n    x = 1;\n} else if (isOK == true && theString =='Hello') {\n    x = 2;\n} else if (isOK != null && theString == 'Hello') {\n    x = 3;\n} else {\n    x = 4;\n}"],
+        "choices": ["1", "2", "3", "4"],
+        "choices-code": ["", "", "", ""],
+        "correct": ["4"],
+        "explanations": ["","","",""],
+        "descriptions": [
+            "これは不正解です。@RestResource アノテーションは、ApexクラスをRESTful Webサービスとして公開するために使用されます。Lightningコンポーネントから直接このアノテーションを用いてApexメソッドにアクセスすることは推奨されません。",
+            "これは正解です。LightningコンポーネントからApexメソッドおよびプロパティへのアクセスを可能にするアノテーションは「@AuraEnabled」です。このアノテーションをApexメソッドまたはプロパティに追加すると、そのメソッドやプロパティがLightningコンポーネントから呼び出し可能になります。",
+            "これは不正解です。@RemoteAction アノテーションは、VisualforceページからApexメソッドにアクセスするために使用されます。しかし、Lightningコンポーネントからは使用できません。",
+            "これは不正解です。@Httplnvocable アノテーションは、存在しないアノテーションです。"
+        ]
     }
 ]
