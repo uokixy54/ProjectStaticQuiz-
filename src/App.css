@@ -36,6 +36,11 @@ code {
   font-family: Consolas, "Courier New", monospace;
 }
 
+.hljs {
+  background: #2c2c2c;
+  color: #f4f4f4;
+}
+
 /* custom style */
 .update-info-container {
   /* margin: 0;
@@ -85,8 +90,9 @@ progress  {
   -moz-appearance: none;
   appearance: none;
   background-color: #c9c8c8;
-  width: 80%;
+  width: 100%;
   border-radius: 8px;
+  height: 15px;
 }
 ::-webkit-progress-bar {
   background-color: #c9c8c8;
@@ -342,6 +348,11 @@ select {
     font-family: Consolas, "Courier New", monospace;
   }
 
+  .hljs {
+    background: #2c2c2c;
+    color: #f4f4f4;
+  }
+
   /* custom style */
 
   .update-info-container {
@@ -355,7 +366,7 @@ select {
     /* background-image: linear-gradient(0deg, transparent 19px, #ccc 20px),linear-gradient(90deg,  transparent 19px, #ccc 20px);
     background-size: 20px 20px; */
     border-radius: 30px 60px/60px 30px;
-    border: solid 5px #ccc7be;            /* smart phone style */
+    border: solid 3px #ccc7be;            /* smart phone style */
   }
   
   .bord {
@@ -397,8 +408,9 @@ select {
     -moz-appearance: none;
     appearance: none;
     background-color: #c9c8c8;
-    width: 80%;
+    width: 100%;
     border-radius: 8px;
+    height: 15px;
   }
   ::-webkit-progress-bar {
     background-color: #c9c8c8;
