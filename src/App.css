@@ -25,11 +25,11 @@ div {
 
 pre {
   background-color: #f4f4f4;
-  padding: 10px;
+  padding: 0px;
   border-radius: 5px;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  overflow-x: scroll;
+  /* white-space: pre-wrap;
+  word-wrap: break-word; */
 }
 
 code {
@@ -331,17 +331,17 @@ select {
   
   div {
     margin: auto;
-    width: 95%;                             /* smart phone style */
+    width: 97%;                             /* smart phone style */
     text-align: left;
   }
   
   pre {
     background-color: #f4f4f4;
-    padding: 10px;
+    padding: 0px;
     border-radius: 5px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    overflow-x: scroll;
+    /* white-space: pre-wrap;
+    word-wrap: break-word; */
   }
   
   code {
