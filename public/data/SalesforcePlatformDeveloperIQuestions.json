@@ -170,7 +170,7 @@
         ],  
         "choices": ["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", "insert propertiesToCreate;", "Database.insert(propertiesToCreate, false);", "Database.insert(propertiesToCreate);"],
         "correct": ["Database.insert(propertiesToCreate, false);"],
-        "explanations":["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", " insert propertiesToCreate;", " Database.insert(propertiesToCreate, false);", " Database.insert(propertiesToCreate);"],
+        "explanations":["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", " insert propertiesToCreate;", "Database.insert(propertiesToCreate, false);", " Database.insert(propertiesToCreate);"],
         "descriptions":[
             "これは不正解です。SalesforceのApexには「System.ALLOW_PARTIAL」というオプションは存在しません。したがって、このコードはコンパイルエラーとなります",
             "これは不正解です。、標準のinsertステートメントはすべてのレコードの成功を要求するため、1つのレコードでエラーが生じると、全レコードの操作がロールバックされます。",
@@ -351,7 +351,7 @@
         "question": "ユーザーが特定のオブジェクト用の作成アクションを使って新しいデータを作成する場合、その新しいデータに関連する情報がどのタイムラインに表示されますか。3つ選びなさい。",
         "choices": ["レコードを作成したユーザーのChatterフィード", "新しいレコードが作成されたレコードのフィード", "レコードを表示できるすべてのユーザーのユーザープロフィールフィード", "新しいレコードのフィードの最初のエントリとして","レコードが作成されたレコードをフォローする最初のユーザーのChatterフィード"],
         "correct": ["レコードを作成したユーザーのChatterフィード","新しいレコードが作成されたレコードのフィード","新しいレコードのフィードの最初のエントリとして"],
-        "explanations":["レコードを作成したユーザーのChatterフィード", "新しいレコードが作成されたレコードのフィード", "レコードを表示できるすべてのユーザーのユーザープロフィールフィード", " レコードが作成されたレコードをフォローする最初のユーザーのChatterフィード"],
+        "explanations":["レコードを作成したユーザーのChatterフィード", "新しいレコードが作成されたレコードのフィード", "レコードを表示できるすべてのユーザーのユーザープロフィールフィード", "新しいレコードのフィードの最初のエントリとして","レコードが作成されたレコードをフォローする最初のユーザーのChatterフィード"],
         "descriptions":[
             "これは正解です。ユーザーが新しいレコードを作成すると、そのユーザーのChatterフィードにアクションが記録されます。",
             "これは正解です。作成された新しいレコード自体のフィードにも、そのレコードが作成されたという情報が表示されます。",
@@ -2996,7 +2996,7 @@
         "question": "Universal Containers社には、カスタムオブジェクトであるEngineering_Support__cを使用して、ユーザーがエンジニアリングチームにサポートを要求できるサポートプロセスがあります。ユーザーは、複数のEngineering_Support__cレコードを1つの商談レコードに関連付けることができる必要があります。さらに、Engineering_Support__c レコードに関する集計情報を商談レコードに表示する必要があります。これらの要件をサポートするために、開発者は何を実装する必要がありますか。",
         "choices": ["商談からEngineering_Support__cへの主従関係", "Engineering_Support__cから商談への主従関係", "商談からEngineering_Support__cへの参照関係", "Engineering_support__cから商談への参照関係"],
         "correct": ["Engineering_Support__cから商談への主従関係"],
-        "explanations":["□ 商談からEngineering_Support__cへの主従関係", "□ Engineering_Support__cから商談への主従関係", "□ 商談からEngineering_Support__cへの参照関係", "□ Engineering_support__cから商談への参照関係"],
+        "explanations":["商談からEngineering_Support__cへの主従関係", "Engineering_Support__cから商談への主従関係", "商談からEngineering_Support__cへの参照関係", "Engineering_support__cから商談への参照関係"],
         "descriptions":[
             "これは不正解です。商談からEngineering_Support__cへの主従関係を設定すると、各商談レコードはEngineering_Support__cの複数の子レコードを持つことができます。しかし、この問題の要件には、商談レコードにEngineering_Support__cレコードの集計情報を表示する必要があり、この目的には主従関係は適していません。主従関係は、子レコード(Engineering_Support__c)の集計情報を親レコード(商談)に表示するために使用されます。",
             "これは正解です。Engineering_Support__cから商談への主従関係を設定すると、Engineering_Support__cレコードが商談レコードに関連付けられます。これにより、商談レコードにEngineering_Support__cレコードの集計情報を表示することが可能になり、問題文で求められている要件を満たすことができます。",
