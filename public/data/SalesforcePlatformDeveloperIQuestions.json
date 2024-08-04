@@ -217,12 +217,11 @@
     },
     {
         "number": "15",
-        "question": "カスタム例外「RecordNotFoundException」は、次のブロックコードによって定義されます。",
-        "following-code":[
-            "public class RecordNotFoundException extends Exception() {",
-
-            "}" 
+        "previous-code": [
+            "public class RecordNotFoundException extends Exception() {/n",
+            "}"
         ],
+        "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。/n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
         "choices": ["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
         "correct": ["throw new RecordNotFoundException(“problem occured”);","throw new RecordNotFoundException();"],
         "explanations":["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
