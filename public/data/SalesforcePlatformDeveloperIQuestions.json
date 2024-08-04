@@ -39,7 +39,7 @@
         "question": "非同期Apexを実行して、ガバナ制限と実行制限が緩和されるものはどれですか。3つ選びなさい。",
         "choices": ["ヒープの合計サイズ", "Salesforce サーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "correct": ["ヒープの合計サイズ","Salesforceサーバの最大CPU時間","SOQLクエリ発行総数"],
-        "explanations":["ヒープの合計サイズ", " Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", " SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
+        "explanations":["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", " SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "descriptions":[
             "これは正解です。非同期Apexでのヒープの合計サイズは、同期Apexと比較して増加します。同期Apexでは最大ヒープサイズは6MBですが、非同期Apexではこの制限が12MBに増えます。",
             "これは正解です。非同期ApexではCPU時間のガバナ制限が緩和されます。非同期Apexの最大CPU時間は60,000ミリ秒ですが、同期Apexではこの制限は10,000ミリ秒です。",
@@ -76,7 +76,7 @@
     },
     {
         "number": "5",
-        "question": "トリガーの実行順序で、beforeトリガーが実行された後、およびafterトリガーが実行される前に、どのステップが発生しますか。正確な順序を答えなさい。1.システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます。\n2.beforeトリガー\n3.afterトリガー\n4.レコードはデータベースに保存されますが、まだコミットされていません。\n5.重複ルールを実行します。",
+        "question": "トリガーの実行順序で、beforeトリガーが実行された後、およびafterトリガーが実行される前に、どのステップが発生しますか。正確な順序を答えなさい。/n1.システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます。\n2.beforeトリガー\n3.afterトリガー\n4.レコードはデータベースに保存されますが、まだコミットされていません。\n5.重複ルールを実行します。",
         "choices": ["1→2→5→3→4", "2→3→4→1→5", "2→1→5→4→3", "2→1→5→3→4"],
         "correct": ["2→1→5→4→3"],
         "explanations":["", "", "", "","説明"],
@@ -85,11 +85,7 @@
             "",
             "",
             "",
-            "まず、beforeトリガー(ステップ2)が実行されます。これは新規レコードが保存される前、または既存レコードが更新される前に実施されます。",
-            "次に、システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます(ステップ1)。これは主に項目レベルセキュリティ検証として機能します。",
-            "重複ルールが実行されます(ステップ5)。これにより、新規作成または更新の試みが重複レコードを作成することを防ぎます。",
-            "レコードはデータベースに保存されますが、まだコミットされていません(ステップ4)。これはafterトリガーが実行される前のステップであり、これによりレコードは一時的に保存されますが、まだ最終的にはコミットされていません。",
-            "最後に、afterトリガー(ステップ3)が実行されます。これはレコードが一時的に保存された後、最終的にデータベースにコミットされる前に行われます。"
+            "まず、beforeトリガー(ステップ2)が実行されます。これは新規レコードが保存される前、または既存レコードが更新される前に実施されます。/n次に、システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます(ステップ1)。これは主に項目レベルセキュリティ検証として機能します。/n重複ルールが実行されます(ステップ5)。これにより、新規作成または更新の試みが重複レコードを作成することを防ぎます。/nレコードはデータベースに保存されますが、まだコミットされていません(ステップ4)。これはafterトリガーが実行される前のステップであり、これによりレコードは一時的に保存されますが、まだ最終的にはコミットされていません。/n最後に、afterトリガー(ステップ3)が実行されます。これはレコードが一時的に保存された後、最終的にデータベースにコミットされる前に行われます。"
         ]
     },
     {
@@ -221,12 +217,11 @@
     },
     {
         "number": "15",
-        "question": "カスタム例外「RecordNotFoundException」は、次のブロックコードによって定義されます。",
-        "following-code":[
-            "public class RecordNotFoundException extends Exception() {",
-
-            "}" 
+        "previous-code": [
+            "public class RecordNotFoundException extends Exception() {/n",
+            "}"
         ],
+        "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。/n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
         "choices": ["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
         "correct": ["throw new RecordNotFoundException(“problem occured”);","throw new RecordNotFoundException();"],
         "explanations":["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
@@ -499,14 +494,13 @@
         "following-code": [
             "String x = 'A';",
             "Integer i = 10;",
-                "if (i < 15 ){",
-                " i = 15;",
-            " try {",
-            "  x = 'B';",
+            "if (i < 15 ){",
+            "    i = 15;",
+            "    x = 'B';",
             " } else if (i < 20 ){",
-            "  x = 'C';",
+            "    x = 'C';",
             "} else {",
-            " x = 'D';",
+            "    x = 'D';",
             "}"
         ],
         "choices": ["A", "B", "C", "D"],
