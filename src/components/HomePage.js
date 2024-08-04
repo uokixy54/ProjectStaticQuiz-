@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
   
+  // レンダリング時ウィンドウ位置を固定
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);

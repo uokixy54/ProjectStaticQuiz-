@@ -39,7 +39,7 @@
         "question": "非同期Apexを実行して、ガバナ制限と実行制限が緩和されるものはどれですか。3つ選びなさい。",
         "choices": ["ヒープの合計サイズ", "Salesforce サーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "correct": ["ヒープの合計サイズ","Salesforceサーバの最大CPU時間","SOQLクエリ発行総数"],
-        "explanations":["ヒープの合計サイズ", " Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", " SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
+        "explanations":["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", " SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "descriptions":[
             "これは正解です。非同期Apexでのヒープの合計サイズは、同期Apexと比較して増加します。同期Apexでは最大ヒープサイズは6MBですが、非同期Apexではこの制限が12MBに増えます。",
             "これは正解です。非同期ApexではCPU時間のガバナ制限が緩和されます。非同期Apexの最大CPU時間は60,000ミリ秒ですが、同期Apexではこの制限は10,000ミリ秒です。",
@@ -66,18 +66,17 @@
         ],
         "choices": ["101", "100", "102", "252"],
         "correct": ["100"],
-        "explanations":["101", "100", "102", "252", "解説"],
+        "explanations":["101", "100", "102", "252"],
         "descriptions":[
             "",
-            "",
-            "",
+            "正解は100です",
             "",
             ""
         ]
     },
     {
         "number": "5",
-        "question": "トリガーの実行順序で、beforeトリガーが実行された後、およびafterトリガーが実行される前に、どのステップが発生しますか。正確な順序を答えなさい。1.システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます。\n2.beforeトリガー\n3.afterトリガー\n4.レコードはデータベースに保存されますが、まだコミットされていません。\n5.重複ルールを実行します。",
+        "question": "トリガーの実行順序で、beforeトリガーが実行された後、およびafterトリガーが実行される前に、どのステップが発生しますか。正確な順序を答えなさい。/n1.システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます。\n2.beforeトリガー\n3.afterトリガー\n4.レコードはデータベースに保存されますが、まだコミットされていません。\n5.重複ルールを実行します。",
         "choices": ["1→2→5→3→4", "2→3→4→1→5", "2→1→5→4→3", "2→1→5→3→4"],
         "correct": ["2→1→5→4→3"],
         "explanations":["", "", "", "","説明"],
@@ -86,11 +85,7 @@
             "",
             "",
             "",
-            "まず、beforeトリガー(ステップ2)が実行されます。これは新規レコードが保存される前、または既存レコードが更新される前に実施されます。",
-            "次に、システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます(ステップ1)。これは主に項目レベルセキュリティ検証として機能します。",
-            "重複ルールが実行されます(ステップ5)。これにより、新規作成または更新の試みが重複レコードを作成することを防ぎます。",
-            "レコードはデータベースに保存されますが、まだコミットされていません(ステップ4)。これはafterトリガーが実行される前のステップであり、これによりレコードは一時的に保存されますが、まだ最終的にはコミットされていません。",
-            "最後に、afterトリガー(ステップ3)が実行されます。これはレコードが一時的に保存された後、最終的にデータベースにコミットされる前に行われます。"
+            "まず、beforeトリガー(ステップ2)が実行されます。これは新規レコードが保存される前、または既存レコードが更新される前に実施されます。/n次に、システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます(ステップ1)。これは主に項目レベルセキュリティ検証として機能します。/n重複ルールが実行されます(ステップ5)。これにより、新規作成または更新の試みが重複レコードを作成することを防ぎます。/nレコードはデータベースに保存されますが、まだコミットされていません(ステップ4)。これはafterトリガーが実行される前のステップであり、これによりレコードは一時的に保存されますが、まだ最終的にはコミットされていません。/n最後に、afterトリガー(ステップ3)が実行されます。これはレコードが一時的に保存された後、最終的にデータベースにコミットされる前に行われます。"
         ]
     },
     {
@@ -171,7 +166,7 @@
         ],  
         "choices": ["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", "insert propertiesToCreate;", "Database.insert(propertiesToCreate, false);", "Database.insert(propertiesToCreate);"],
         "correct": ["Database.insert(propertiesToCreate, false);"],
-        "explanations":["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", " insert propertiesToCreate;", " Database.insert(propertiesToCreate, false);", " Database.insert(propertiesToCreate);"],
+        "explanations":["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", " insert propertiesToCreate;", "Database.insert(propertiesToCreate, false);", " Database.insert(propertiesToCreate);"],
         "descriptions":[
             "これは不正解です。SalesforceのApexには「System.ALLOW_PARTIAL」というオプションは存在しません。したがって、このコードはコンパイルエラーとなります",
             "これは不正解です。、標準のinsertステートメントはすべてのレコードの成功を要求するため、1つのレコードでエラーが生じると、全レコードの操作がロールバックされます。",
@@ -222,12 +217,11 @@
     },
     {
         "number": "15",
-        "question": "カスタム例外「RecordNotFoundException」は、次のブロックコードによって定義されます。",
-        "following-code":[
-            "public class RecordNotFoundException extends Exception() {",
-
-            "}" 
+        "previous-code": [
+            "public class RecordNotFoundException extends Exception() {/n",
+            "}"
         ],
+        "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。/n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
         "choices": ["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
         "correct": ["throw new RecordNotFoundException(“problem occured”);","throw new RecordNotFoundException();"],
         "explanations":["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
@@ -352,7 +346,7 @@
         "question": "ユーザーが特定のオブジェクト用の作成アクションを使って新しいデータを作成する場合、その新しいデータに関連する情報がどのタイムラインに表示されますか。3つ選びなさい。",
         "choices": ["レコードを作成したユーザーのChatterフィード", "新しいレコードが作成されたレコードのフィード", "レコードを表示できるすべてのユーザーのユーザープロフィールフィード", "新しいレコードのフィードの最初のエントリとして","レコードが作成されたレコードをフォローする最初のユーザーのChatterフィード"],
         "correct": ["レコードを作成したユーザーのChatterフィード","新しいレコードが作成されたレコードのフィード","新しいレコードのフィードの最初のエントリとして"],
-        "explanations":["レコードを作成したユーザーのChatterフィード", "新しいレコードが作成されたレコードのフィード", "レコードを表示できるすべてのユーザーのユーザープロフィールフィード", " レコードが作成されたレコードをフォローする最初のユーザーのChatterフィード"],
+        "explanations":["レコードを作成したユーザーのChatterフィード", "新しいレコードが作成されたレコードのフィード", "レコードを表示できるすべてのユーザーのユーザープロフィールフィード", "新しいレコードのフィードの最初のエントリとして","レコードが作成されたレコードをフォローする最初のユーザーのChatterフィード"],
         "descriptions":[
             "これは正解です。ユーザーが新しいレコードを作成すると、そのユーザーのChatterフィードにアクションが記録されます。",
             "これは正解です。作成された新しいレコード自体のフィードにも、そのレコードが作成されたという情報が表示されます。",
@@ -500,14 +494,13 @@
         "following-code": [
             "String x = 'A';",
             "Integer i = 10;",
-                "if (i < 15 ){",
-                " i = 15;",
-            " try {",
-            "  x = 'B';",
+            "if (i < 15 ){",
+            "    i = 15;",
+            "    x = 'B';",
             " } else if (i < 20 ){",
-            "  x = 'C';",
+            "    x = 'C';",
             "} else {",
-            " x = 'D';",
+            "    x = 'D';",
             "}"
         ],
         "choices": ["A", "B", "C", "D"],
@@ -1005,7 +998,7 @@
         "question": "開発者が、映画、俳優、契約を追跡するスキーマを作成することになりました。1つの映画は多くの契約を持つことができ、1人の俳優は多くの契約を持つことができます。各契約は、1 人のユーザーによって所有され、アクティブに管理されます。映画や俳優のレコードにアクセスすることなく、ユーザーが所有する契約を簡単に管理できるようにするには、どのスキーマを作成する必要がありますか。",
         "choices": ["映画オブジェクトへの主従関係と俳優オブジェクトへの参照関係", "映画オブジェクトへの参照関係と俳優オブジェクトへの主従関係", "映画オブジェクトへの主従関係と俳優オブジェクトへの主従関係", "映画オブジェクトへの参照関係と俳優オブジェクトへの参照関係"],
         "correct": ["映画オブジェクトへの参照関係と俳優オブジェクトへの参照関係"],
-        "explanations":["開発者が、映画、俳優、契約を追跡するスキーマを作成することになりました。1つの映画は多くの契約を持つことができ、1人の俳優は多くの契約を持つことができます。各契約は、1 人のユーザーによって所有され、アクティブに管理されます。映画や俳優のレコードにアクセスすることなく、ユーザーが所有する契約を簡単に管理できるようにするには、どのスキーマを作成する必要がありますか。"],
+        "explanations":["映画オブジェクトへの主従関係と俳優オブジェクトへの参照関係", "映画オブジェクトへの参照関係と俳優オブジェクトへの主従関係", "映画オブジェクトへの主従関係と俳優オブジェクトへの主従関係", "映画オブジェクトへの参照関係と俳優オブジェクトへの参照関係"],
         "descriptions":[
             "これは不正解です。主従関係を映画オブジェクトに設定すると、契約は映画に依存する子レコードになります。これは、映画が削除された場合、すべての関連する契約も削除されることを意味します。また、契約は俳優オブジェクトに対して参照関係を持つため、独自の所有者を持つことができますが、契約が映画と俳優の両方に関連しているため、この設定では要件を満たしていません。",
             "これは不正解です。俳優オブジェクトへの主従関係を設定すると、契約は俳優に依存する子レコードになります。これは俳優が削除された場合、その俳優に関連するすべての契約が削除されることを意味します。また、映画に対する参照関係は設定可能ですが、契約が映画と俳優の両方に関連している必要があるため、このスキーマは要件を満たしていません。",
@@ -2997,7 +2990,7 @@
         "question": "Universal Containers社には、カスタムオブジェクトであるEngineering_Support__cを使用して、ユーザーがエンジニアリングチームにサポートを要求できるサポートプロセスがあります。ユーザーは、複数のEngineering_Support__cレコードを1つの商談レコードに関連付けることができる必要があります。さらに、Engineering_Support__c レコードに関する集計情報を商談レコードに表示する必要があります。これらの要件をサポートするために、開発者は何を実装する必要がありますか。",
         "choices": ["商談からEngineering_Support__cへの主従関係", "Engineering_Support__cから商談への主従関係", "商談からEngineering_Support__cへの参照関係", "Engineering_support__cから商談への参照関係"],
         "correct": ["Engineering_Support__cから商談への主従関係"],
-        "explanations":["□ 商談からEngineering_Support__cへの主従関係", "□ Engineering_Support__cから商談への主従関係", "□ 商談からEngineering_Support__cへの参照関係", "□ Engineering_support__cから商談への参照関係"],
+        "explanations":["商談からEngineering_Support__cへの主従関係", "Engineering_Support__cから商談への主従関係", "商談からEngineering_Support__cへの参照関係", "Engineering_support__cから商談への参照関係"],
         "descriptions":[
             "これは不正解です。商談からEngineering_Support__cへの主従関係を設定すると、各商談レコードはEngineering_Support__cの複数の子レコードを持つことができます。しかし、この問題の要件には、商談レコードにEngineering_Support__cレコードの集計情報を表示する必要があり、この目的には主従関係は適していません。主従関係は、子レコード(Engineering_Support__c)の集計情報を親レコード(商談)に表示するために使用されます。",
             "これは正解です。Engineering_Support__cから商談への主従関係を設定すると、Engineering_Support__cレコードが商談レコードに関連付けられます。これにより、商談レコードにEngineering_Support__cレコードの集計情報を表示することが可能になり、問題文で求められている要件を満たすことができます。",
