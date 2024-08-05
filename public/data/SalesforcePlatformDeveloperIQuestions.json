@@ -365,7 +365,7 @@
         "question": "開発者は、商品( API名:Product2)と価格表(API名:Pricebook2)のテストデータを作成するときにどのステートメントを使用しますか。",
         "choices": ["List objList = Test.loadData(Account.sObjectType, “myResource”);", "Pricebook pb = new Pricebook();", "Id pricebookId = Test.getStandardPricebookId();", "IsTest(SeeAllData = false);"],
         "correct": ["Id pricebookId = Test.getStandardPricebookId();"],
-        "explanations":["List objList = Test.loadData(Account.sObjectType, ‘myResource’);", "Pricebook pb = new Pricebook();", " Id pricebookId = Test.getStandardPricebookId();", " @IsTest(SeeAllData = false);"],
+        "explanations":["List objList = Test.loadData(Account.sObjectType, “myResource”);", "Pricebook pb = new Pricebook();", "Id pricebookId = Test.getStandardPricebookId();", "IsTest(SeeAllData = false);"],
         "descriptions":[
             "これは不正解です。このステートメントは、テストデータをロードするために使用されますが、Account.sObjectTypeという部分が取引先オブジェクトを指しています。したがって、商品(API名:Product2)や価格表(API名:Pricebook2)のテストデータを作成するためのステートメントとは言えません。",
             "これは不正解です。このコードは価格表の新しいインスタンスを作成するものですが、Pricebookは正しいAPI名ではありません。正しいAPI名はPricebook2です。",
@@ -485,7 +485,7 @@
         "question": "Lightningコンポーネントは次のうちどの製品で利用できますか。3つ選びなさい。",
         "choices": ["Salesforceモバイルアプリ", "Force.com", "コミュニティ", "Lightning Experience"],
         "correct": ["Salesforceモバイルアプリ","コミュニティ","Lightning Experience"],
-        "explanations":["Salesforceモバイルアプリ", "Force.com", "コミュニティ", " Lightning Experience"],
+        "explanations":["Salesforceモバイルアプリ", "Force.com", "コミュニティ", "Lightning Experience"],
         "descriptions":[
             "これは正解です。Salesforceのモバイルアプリを使用する時、顧客はLightningコンポーネントを通じて快適な操作体験を受けることができます。例えば、商品情報の参照や商談のアップデートなど、移動中や外出先でもスムーズに業務を進めることができます。",
             "これは不正解です。Force.comは、開発者が アプリケーションの開発やカスタマイズを行うプラットフォームです。一般の顧客が直接アクセスして作業をすることは想定されていません。Lightningコンポーネントは、主にエンドユーザー向けのインターフェースであるLightning Experienceでの利用が主です。従って、Force.comはLightningコンポーネントを使用できる場所ではありません。",
