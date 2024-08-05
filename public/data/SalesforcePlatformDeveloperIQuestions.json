@@ -218,7 +218,7 @@
     {
         "number": "15",
         "previous-code": [
-            "public class RecordNotFoundException extends Exception() {/n",
+            "public class RecordNotFoundException extends Exception() {\n",
             "}"
         ],
         "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。/n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
