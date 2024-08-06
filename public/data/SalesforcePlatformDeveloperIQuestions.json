@@ -5,8 +5,8 @@
         "following-code": [
             "Integer x = 0;",
             "do {",
-                "x = 1;",
-                "x++;",
+            "    x = 1;",
+            "    x++;",
             "} while (x < 1);",
             "System.debug(x);"
         ],
@@ -37,9 +37,9 @@
     {
         "number": "3",
         "question": "非同期Apexを実行して、ガバナ制限と実行制限が緩和されるものはどれですか。3つ選びなさい。",
-        "choices": ["ヒープの合計サイズ", "Salesforce サーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
+        "choices": ["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "correct": ["ヒープの合計サイズ","Salesforceサーバの最大CPU時間","SOQLクエリ発行総数"],
-        "explanations":["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", " SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
+        "explanations":["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "descriptions":[
             "これは正解です。非同期Apexでのヒープの合計サイズは、同期Apexと比較して増加します。同期Apexでは最大ヒープサイズは6MBですが、非同期Apexではこの制限が12MBに増えます。",
             "これは正解です。非同期ApexではCPU時間のガバナ制限が緩和されます。非同期Apexの最大CPU時間は60,000ミリ秒ですが、同期Apexではこの制限は10,000ミリ秒です。",
@@ -54,14 +54,14 @@
         "following-code": [
             "Account myAccount = new Account(Name = 'MyAccount');",
             "insert myAccount;",
-                "For(Integer x = 0; x < 250; x++) {;",
-                "Account newAccount = new Account(Name = 'MyAccount' + x);",
-            " try {",
-            " Insert newAccount;",
-            " } catch (Exception ex) {",
-            " System.debug(ex);",
-            "}",
-            "insert new Account(Name = 'myAccount');",
+            "For(Integer x = 0; x < 250; x++) {",
+            "   Account newAccount = new Account(Name = 'MyAccount' + x);",
+            "    try {",
+            "        Insert newAccount;",
+            "    } catch (Exception ex) {",
+            "        System.debug(ex);",
+            "    }",
+            "   insert new Account(Name = 'myAccount');",
             "}"
         ],
         "choices": ["101", "100", "102", "252"],
@@ -76,7 +76,7 @@
     },
     {
         "number": "5",
-        "question": "トリガーの実行順序で、beforeトリガーが実行された後、およびafterトリガーが実行される前に、どのステップが発生しますか。正確な順序を答えなさい。/n1.システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます。\n2.beforeトリガー\n3.afterトリガー\n4.レコードはデータベースに保存されますが、まだコミットされていません。\n5.重複ルールを実行します。",
+        "question": "トリガーの実行順序で、beforeトリガーが実行された後、およびafterトリガーが実行される前に、どのステップが発生しますか。正確な順序を答えなさい。\n1.システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます。\n2.beforeトリガー\n3.afterトリガー\n4.レコードはデータベースに保存されますが、まだコミットされていません。\n5.重複ルールを実行します。",
         "choices": ["1→2→5→3→4", "2→3→4→1→5", "2→1→5→4→3", "2→1→5→3→4"],
         "correct": ["2→1→5→4→3"],
         "explanations":["", "", "", "","説明"],
@@ -119,7 +119,7 @@
         "question": "開発者には、コードブロックを共有ありまたはなしで実行するかどうかを示すwith sharingおよびwithout sharingを省略したコードブロックがあります。Salesforce組織でコードを実行するユーザーの組織全体のデフォルトおよび共有設定に自動的に従うものは次のうちどれですか。",
         "choices": ["Apexトリガー", "HTTPコールアウト", "カスタムコントローラ", "匿名ブロック"],
         "correct": ["匿名ブロック"],
-        "explanations":["Apexトリガー", " HTTPコールアウト", "カスタムコントローラ", " 匿名ブロック"],
+        "explanations":["Apexトリガー", "HTTPコールアウト", "カスタムコントローラ", "匿名ブロック"],
         "descriptions":[
             "これは不正解です。Apex トリガーは、明示的な共有宣言を持つことができません。そのため、トリガーは常にwithout sharingの設定で実行されます。",
             "これは不正解です。HTTPコールアウトはSalesforceのデータアクセスや共有設定とは無関係に外部サービスにリクエストを送る動作をします。共有設定は影響を及ぼしません。",
@@ -179,7 +179,7 @@
         "question": "サンドボックスで作業する開発者は、新しいテストクラスを実行するために何を使用する必要がありますか。2つ選びなさい。",
         "choices": ["REST APIおよびApexTestRunメソッド", "Salesforceセットアップの[テストの実行]ページ", "Salesforceセットアップの[Apexテスト実行]ページ", "開発者コンソールのテストメニュー"],
         "correct": ["Salesforceセットアップの[Apexテスト実行]ページ","開発者コンソールのテストメニュー"],
-        "explanations":["REST APIおよびApexTestRunメソッド", "Salesforceセットアップの[テストの実行]ページ", "Salesforceセットアップの[Apex テスト実行]ページ", "開発者コンソールのテストメニュー"],
+        "explanations":["REST APIおよびApexTestRunメソッド", "Salesforceセットアップの[テストの実行]ページ", "Salesforceセットアップの[Apexテスト実行]ページ", "開発者コンソールのテストメニュー"],
         "descriptions":[
             "これは不正解です。ApexTestRunメソッドは存在しないため、開発者はこれを使用して新しいテストクラスを実行することはできません。また、一般的には、REST APIは直接的にテストクラスを実行するための手段としては使用されません",
             "これは不正解です。Salesforceには「テストの実行」ページは存在しないため、これを使用してテストクラスを実行することはできません。正確なページ名は「Apex テスト実行」ページです。",
@@ -202,8 +202,13 @@
     },
     {
         "number": "14",
-        "question": "開発者は次の匿名コードブロックを実行します。",
-        "following-code":["List <Account> acc =[SELECT Id FROM Account LIMIT 10]; \nDelete acc;\nDatabase.emptyRecycleBin(acc);\nsystem.debug(Limits.getDMLStatements() + '、' + Limits.getLimitDMLStatements());"],
+        "previous-code": [
+            "List <Account> acc =[SELECT Id FROM Account LIMIT 10]; ",
+            "Delete acc;",
+            "Database.emptyRecycleBin(acc);",
+            "system.debug(Limits.getDMLStatements() + '、' + Limits.getLimitDMLStatements());"
+        ],
+        "question": "開発者は以上の匿名コードブロックを実行します。\n結果は次の選択肢のうちのどれになりますか。",
         "choices": ["2、150", "11、150", "150、2", "150、11"],
         "correct": ["2、150"],
         "explanations":["", "", "", "","解説"],
@@ -218,7 +223,7 @@
     {
         "number": "15",
         "previous-code": [
-            "public class RecordNotFoundException extends Exception() {/n",
+            "public class RecordNotFoundException extends Exception() {\n",
             "}"
         ],
         "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。/n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
@@ -360,7 +365,7 @@
         "question": "開発者は、商品( API名:Product2)と価格表(API名:Pricebook2)のテストデータを作成するときにどのステートメントを使用しますか。",
         "choices": ["List objList = Test.loadData(Account.sObjectType, “myResource”);", "Pricebook pb = new Pricebook();", "Id pricebookId = Test.getStandardPricebookId();", "IsTest(SeeAllData = false);"],
         "correct": ["Id pricebookId = Test.getStandardPricebookId();"],
-        "explanations":["List objList = Test.loadData(Account.sObjectType, ‘myResource’);", "Pricebook pb = new Pricebook();", " Id pricebookId = Test.getStandardPricebookId();", " @IsTest(SeeAllData = false);"],
+        "explanations":["List objList = Test.loadData(Account.sObjectType, “myResource”);", "Pricebook pb = new Pricebook();", "Id pricebookId = Test.getStandardPricebookId();", "IsTest(SeeAllData = false);"],
         "descriptions":[
             "これは不正解です。このステートメントは、テストデータをロードするために使用されますが、Account.sObjectTypeという部分が取引先オブジェクトを指しています。したがって、商品(API名:Product2)や価格表(API名:Pricebook2)のテストデータを作成するためのステートメントとは言えません。",
             "これは不正解です。このコードは価格表の新しいインスタンスを作成するものですが、Pricebookは正しいAPI名ではありません。正しいAPI名はPricebook2です。",
@@ -379,9 +384,9 @@
         "explanations":["ApexPages.StandardSetController controller = new Apexpages.StandardSetController([SELECT id FROM Account LIMIT 1]);", "ApexPages.StandardController controller = new ApexPages.StandardController([SELECT Id FROM Account LIMIT 1]);", "ApexPages.StandardController controller = new ApexPages.StandardController(Database.getQueryLocator(‘SELECT Id FROM Account LIMIT 1’));", "ApexPages.StandardSetController controller = new ApexPages.StandardSetController(Database.getQueryLocator(‘SELECT Id FROM Account LIMIT 1’));"],
         "descriptions":[
             "これは不正解です。StandardSetControllerは一連のレコード(例えば、リストビュー)を表すために使用されますが、このコードブロックではSOQLクエリを直接StandardSetControllerのコンストラクタに渡しており、これは正しい使い方ではありません。StandardSetControllerはリストやDatabase.QueryLocatorオブジェクトを引数に取るべきです。",
-            "ApexPages.StandardController controller = new ApexPages.StandardController([SELECT Id FROM Account LIMIT 1]);",
-            "ApexPages.StandardController controller = new ApexPages.StandardController(Database.getQueryLocator(‘SELECT Id FROM Account LIMIT 1’));",
-            "ApexPages.StandardSetController controller = new ApexPages.StandardSetController(Database.getQueryLocator(‘SELECT Id FROM Account LIMIT 1’));"
+            "これは不正解です。StandardControllerは単一のレコードを表すために使用され、リストビューの情報を取得するためには適していません。また、SOQLクエリの結果を直接コンストラクタに渡すことはできません。正しくは、クエリの結果を取得した後、その単一のレコードをStandardControllerのコンストラクタに渡す必要があります。",
+            "これは不正解です。getQueryLocatorはStandardSetControllerで使用するためのものであり、StandardControllerとは互換性がありません。StandardControllerは単一のsObjectレコードを扱うためのものです。",
+            "これは正解です。StandardSetControllerは一連のレコードを扱うためのクラスであり、Database.getQueryLocatorメソッドを使用してSOQLクエリの結果を取得することができます。このコードは、取引先オブジェクトのリストビューを取得するために適切に構成されています。getListViewOptionsメソッドはStandardSetControllerで使用可能で、ListViewのオプションを返します。"
         ]
     },
     {
@@ -402,7 +407,7 @@
         "question": "dowork() メソッドを呼び出す際に使用できるコードセグメントはどれですか。",
         "choices": ["For(Trigger.isInsert t: Trigger.new) { dowork(); }", "If(Trigger.isInsert) dowork();", "If(Trigger.isRunning) dowork();", "For(Trigger.isRunning t: Trigger.new) { dowork(); }"],
         "correct": ["If(Trigger.isInsert) dowork();"],
-        "explanations":["For(Trigger.isInsert t: Trigger.new) { dowork(); }", " If(Trigger.isInsert) dowork();", " If(Trigger.isRunning) dowork();", " For(Trigger.isRunning t: Trigger.new) { dowork(); }"],
+        "explanations":["For(Trigger.isInsert t: Trigger.new) { dowork(); }", "If(Trigger.isInsert) dowork();", "If(Trigger.isRunning) dowork();", "For(Trigger.isRunning t: Trigger.new) { dowork(); }"],
         "descriptions":[
             "これは不正解です。Trigger.isInsert はbooleanのプロパティであり、forループの初期化部分で変数に代入することはできません。また、For(Trigger.isInsert t: Trigger.new)という文法自体が正しくありません。正しくはforループ内で、コレクションから要素を取り出す形(例: for(SObject t : Trigger.new))となりますが、このコードではTrigger.isInsertというbooleanプロパティを変数tに代入しようとしています。",
             "これは正解です。Trigger.isInsertは、現在のトリガーがInsert操作の際に実行されているかを示すbooleanのプロパティです。したがって、これがtrueの場合、dowork()メソッドが呼び出されます。",
@@ -466,7 +471,7 @@
         "number": "33",
         "question": "取引先レコードの項目値が更新された場合、関連する商談のカスタム項目の値を更新する方法はどれですか。2つ選びなさい。",
         "choices": ["取引先オブジェクトのApexトリガー", "取引先オブジェクトの プロセスビルダー", "取引先オブジェクトのクロスオブジェクト数式項目", "取引先オブジェクトのワークフロールール"],
-        "correct": ["取引先オブジェクトのApexトリガー","取引先オブジェクトのプロセスビルダー"],
+        "correct": ["取引先オブジェクトのApexトリガー","取引先オブジェクトの プロセスビルダー"],
         "explanations":["取引先オブジェクトのApexトリガー", "取引先オブジェクトの プロセスビルダー", "取引先オブジェクトのクロスオブジェクト数式項目", "取引先オブジェクトのワークフロールール"],
         "descriptions":[
             "これは正解です。Apexトリガーは特定のDML操作(例：レコードの更新)に応じてカスタムApexコードを実行します。このトリガーを使用して、取引先の更新時に関連する商談のカスタム項目を更新できます。",
@@ -480,7 +485,7 @@
         "question": "Lightningコンポーネントは次のうちどの製品で利用できますか。3つ選びなさい。",
         "choices": ["Salesforceモバイルアプリ", "Force.com", "コミュニティ", "Lightning Experience"],
         "correct": ["Salesforceモバイルアプリ","コミュニティ","Lightning Experience"],
-        "explanations":["Salesforceモバイルアプリ", "Force.com", "コミュニティ", " Lightning Experience"],
+        "explanations":["Salesforceモバイルアプリ", "Force.com", "コミュニティ", "Lightning Experience"],
         "descriptions":[
             "これは正解です。Salesforceのモバイルアプリを使用する時、顧客はLightningコンポーネントを通じて快適な操作体験を受けることができます。例えば、商品情報の参照や商談のアップデートなど、移動中や外出先でもスムーズに業務を進めることができます。",
             "これは不正解です。Force.comは、開発者が アプリケーションの開発やカスタマイズを行うプラットフォームです。一般の顧客が直接アクセスして作業をすることは想定されていません。Lightningコンポーネントは、主にエンドユーザー向けのインターフェースであるLightning Experienceでの利用が主です。従って、Force.comはLightningコンポーネントを使用できる場所ではありません。",
@@ -2509,10 +2514,10 @@
         "correct": ["<target>Lightning_RecordPage</target>をstatusComponent.js-meta.xmlファイルに追加する。", "<isExposed>true</isExposed>をstatusComponent.js-meta.xmlファイルに追加する。"],
         "explanations":["<target>Lightning_RecordPage</target>をstatusComponent.js-meta.xmlファイルに追加する。", "<target>Lightning_RecordPage</target>をstatusComponent.jsファイルに追加する。", "<masterLabel>Account</masterLabel>をstatusComponent.js-meta.xmlファイルに追加する。", "<isExposed>true</isExposed>をstatusComponent.js-meta.xmlファイルに追加する。"],
         "descriptions":[
-            "これは正解です。手順3に該当します。",
+            "これは正解です。コンポーネントを特定のページタイプ、この場合はレコードページに利用可能にするために、<target>Lightning_RecordPage</target>をstatusComponent.js-meta.xmlファイルに追加する必要があります。",
             "これは不正解です。.jsファイルはコンポーネントのロジックを記述する場所であり、ページのタイプや利用可能なオブジェクトを指定するための場所ではありません。このような設定は.js-meta.xmlファイルに追加する必要があります。",
             "これは不正解です。<masterLabel>タグはコンポーネントの表示名を指定するためのもので、特定のオブジェクトにコンポーネントを関連付けるためのものではありません。",
-            "これは正解です。手順2に該当します。"
+            "これは正解です。コンポーネントをLightning アプリケーションビルダーやエクスペリエンスビルダーで利用可能にするためには、<isExposed>true</isExposed>をstatusComponent.js-meta.xmlファイルに追加する必要があります。"
         ]
     },
     {
