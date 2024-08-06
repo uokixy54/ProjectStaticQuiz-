@@ -37,9 +37,9 @@
     {
         "number": "3",
         "question": "非同期Apexを実行して、ガバナ制限と実行制限が緩和されるものはどれですか。3つ選びなさい。",
-        "choices": ["ヒープの合計サイズ", "Salesforce サーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
+        "choices": ["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "correct": ["ヒープの合計サイズ","Salesforceサーバの最大CPU時間","SOQLクエリ発行総数"],
-        "explanations":["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", " SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
+        "explanations":["ヒープの合計サイズ", "Salesforceサーバの最大CPU時間", "Apexトランザクションごとの最大実行時間", "SOQLクエリによって取得されるレコードの合計数","SOQLクエリ発行総数"],
         "descriptions":[
             "これは正解です。非同期Apexでのヒープの合計サイズは、同期Apexと比較して増加します。同期Apexでは最大ヒープサイズは6MBですが、非同期Apexではこの制限が12MBに増えます。",
             "これは正解です。非同期ApexではCPU時間のガバナ制限が緩和されます。非同期Apexの最大CPU時間は60,000ミリ秒ですが、同期Apexではこの制限は10,000ミリ秒です。",
@@ -360,7 +360,7 @@
         "question": "開発者は、商品( API名:Product2)と価格表(API名:Pricebook2)のテストデータを作成するときにどのステートメントを使用しますか。",
         "choices": ["List objList = Test.loadData(Account.sObjectType, “myResource”);", "Pricebook pb = new Pricebook();", "Id pricebookId = Test.getStandardPricebookId();", "IsTest(SeeAllData = false);"],
         "correct": ["Id pricebookId = Test.getStandardPricebookId();"],
-        "explanations":["List objList = Test.loadData(Account.sObjectType, ‘myResource’);", "Pricebook pb = new Pricebook();", " Id pricebookId = Test.getStandardPricebookId();", " @IsTest(SeeAllData = false);"],
+        "explanations":["List objList = Test.loadData(Account.sObjectType, “myResource”);", "Pricebook pb = new Pricebook();", "Id pricebookId = Test.getStandardPricebookId();", "IsTest(SeeAllData = false);"],
         "descriptions":[
             "これは不正解です。このステートメントは、テストデータをロードするために使用されますが、Account.sObjectTypeという部分が取引先オブジェクトを指しています。したがって、商品(API名:Product2)や価格表(API名:Pricebook2)のテストデータを作成するためのステートメントとは言えません。",
             "これは不正解です。このコードは価格表の新しいインスタンスを作成するものですが、Pricebookは正しいAPI名ではありません。正しいAPI名はPricebook2です。",
@@ -480,7 +480,7 @@
         "question": "Lightningコンポーネントは次のうちどの製品で利用できますか。3つ選びなさい。",
         "choices": ["Salesforceモバイルアプリ", "Force.com", "コミュニティ", "Lightning Experience"],
         "correct": ["Salesforceモバイルアプリ","コミュニティ","Lightning Experience"],
-        "explanations":["Salesforceモバイルアプリ", "Force.com", "コミュニティ", " Lightning Experience"],
+        "explanations":["Salesforceモバイルアプリ", "Force.com", "コミュニティ", "Lightning Experience"],
         "descriptions":[
             "これは正解です。Salesforceのモバイルアプリを使用する時、顧客はLightningコンポーネントを通じて快適な操作体験を受けることができます。例えば、商品情報の参照や商談のアップデートなど、移動中や外出先でもスムーズに業務を進めることができます。",
             "これは不正解です。Force.comは、開発者が アプリケーションの開発やカスタマイズを行うプラットフォームです。一般の顧客が直接アクセスして作業をすることは想定されていません。Lightningコンポーネントは、主にエンドユーザー向けのインターフェースであるLightning Experienceでの利用が主です。従って、Force.comはLightningコンポーネントを使用できる場所ではありません。",
@@ -2509,10 +2509,10 @@
         "correct": ["<target>Lightning_RecordPage</target>をstatusComponent.js-meta.xmlファイルに追加する。", "<isExposed>true</isExposed>をstatusComponent.js-meta.xmlファイルに追加する。"],
         "explanations":["<target>Lightning_RecordPage</target>をstatusComponent.js-meta.xmlファイルに追加する。", "<target>Lightning_RecordPage</target>をstatusComponent.jsファイルに追加する。", "<masterLabel>Account</masterLabel>をstatusComponent.js-meta.xmlファイルに追加する。", "<isExposed>true</isExposed>をstatusComponent.js-meta.xmlファイルに追加する。"],
         "descriptions":[
-            "これは正解です。手順3に該当します。",
+            "これは正解です。コンポーネントを特定のページタイプ、この場合はレコードページに利用可能にするために、<target>Lightning_RecordPage</target>をstatusComponent.js-meta.xmlファイルに追加する必要があります。",
             "これは不正解です。.jsファイルはコンポーネントのロジックを記述する場所であり、ページのタイプや利用可能なオブジェクトを指定するための場所ではありません。このような設定は.js-meta.xmlファイルに追加する必要があります。",
             "これは不正解です。<masterLabel>タグはコンポーネントの表示名を指定するためのもので、特定のオブジェクトにコンポーネントを関連付けるためのものではありません。",
-            "これは正解です。手順2に該当します。"
+            "これは正解です。コンポーネントをLightning アプリケーションビルダーやエクスペリエンスビルダーで利用可能にするためには、<isExposed>true</isExposed>をstatusComponent.js-meta.xmlファイルに追加する必要があります。"
         ]
     },
     {
