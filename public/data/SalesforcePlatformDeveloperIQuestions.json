@@ -159,9 +159,9 @@
         "following-code":[
             "List<Property__c> propertiesToCreate = helperClass.CreateProperties();",
             "try {",
-                "/*Question*/",
+            "/*Question*/",
             "} catch (Exception exp) {",
-                "//Exception handling",
+            "//Exception handling",
             "}"
         ],  
         "choices": ["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", "insert propertiesToCreate;", "Database.insert(propertiesToCreate, false);", "Database.insert(propertiesToCreate);"],
