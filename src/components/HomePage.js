@@ -37,6 +37,7 @@ const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
             <option value="SalesforceCertifiedAdministrator">Salesforce Certified Administrator</option>
             <option value="SalesforcePlatformAppBuilder">Salesforce Platform App Builder</option>
             <option value="SalesforcePlatformDeveloperI">Salesforce Platform Developer I</option>
+            <option value="SalesforceSalesCloud">Salesforce Sales Cloud</option>
           </select>
         </div>
       </div>

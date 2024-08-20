@@ -59,6 +59,10 @@ function App() {
       const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforcePlatformDeveloperIQuestions.json');
       data = await response.json();
 
+    } else if (selectedValue === 'SalesforceSalesCloud') {
+      const response = await fetch(process.env.PUBLIC_URL + '/data/SalesforceSalesCloudQuestions.json');
+      data = await response.json();
+
     }
   const randomNum = Math.round(Math.random() * (data.length - 1));
 
