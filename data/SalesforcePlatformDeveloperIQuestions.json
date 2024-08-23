@@ -85,7 +85,7 @@
             "",
             "",
             "",
-            "まず、beforeトリガー(ステップ2)が実行されます。これは新規レコードが保存される前、または既存レコードが更新される前に実施されます。/n次に、システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます(ステップ1)。これは主に項目レベルセキュリティ検証として機能します。/n重複ルールが実行されます(ステップ5)。これにより、新規作成または更新の試みが重複レコードを作成することを防ぎます。/nレコードはデータベースに保存されますが、まだコミットされていません(ステップ4)。これはafterトリガーが実行される前のステップであり、これによりレコードは一時的に保存されますが、まだ最終的にはコミットされていません。/n最後に、afterトリガー(ステップ3)が実行されます。これはレコードが一時的に保存された後、最終的にデータベースにコミットされる前に行われます。"
+            "まず、beforeトリガー(ステップ2)が実行されます。これは新規レコードが保存される前、または既存レコードが更新される前に実施されます。\n次に、システム検証ステップが再度実行され、ユーザー定義の入力規則がチェックされます(ステップ1)。これは主に項目レベルセキュリティ検証として機能します。\n重複ルールが実行されます(ステップ5)。これにより、新規作成または更新の試みが重複レコードを作成することを防ぎます。\nレコードはデータベースに保存されますが、まだコミットされていません(ステップ4)。これはafterトリガーが実行される前のステップであり、これによりレコードは一時的に保存されますが、まだ最終的にはコミットされていません。\n最後に、afterトリガー(ステップ3)が実行されます。これはレコードが一時的に保存された後、最終的にデータベースにコミットされる前に行われます。"
         ]
     },
     {
@@ -159,9 +159,9 @@
         "following-code":[
             "List<Property__c> propertiesToCreate = helperClass.CreateProperties();",
             "try {",
-                "/*Question*/",
+            "/*Question*/",
             "} catch (Exception exp) {",
-                "//Exception handling",
+            "//Exception handling",
             "}"
         ],  
         "choices": ["Database.insert(propertiesToCreate, System.ALLOW_PARTIAL);", "insert propertiesToCreate;", "Database.insert(propertiesToCreate, false);", "Database.insert(propertiesToCreate);"],
@@ -226,7 +226,7 @@
             "public class RecordNotFoundException extends Exception() {\n",
             "}"
         ],
-        "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。/n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
+        "question": "カスタム例外「RecordNotFoundException」は、以上のブロックコードによって定義されます。\n開発者はどのステートメントを使用してカスタム例外をスローできますか。2つ選びなさい。",
         "choices": ["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
         "correct": ["throw new RecordNotFoundException(“problem occured”);","throw new RecordNotFoundException();"],
         "explanations":["throw new RecordNotFoundException(“problem occured”);", "throw new RecordNotFoundException();", "throw RecordNotFoundException(“problem occured”);", "throw RecordNotFoundException();"],
