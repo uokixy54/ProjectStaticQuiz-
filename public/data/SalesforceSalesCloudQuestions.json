@@ -774,7 +774,7 @@
         "number": "60",
         "question": "CK社のテクノロジーVPは、営業チームの全ての自動化にSalesforceを使い始めたいと考えています。そこで7,000万件のレコードをレガシーデータベースからデータウェアハウスに移行しました。このウェアハウスはSalesforceと同期します。レコードを検索した時に、元のソースデータベースと相互参照されるようにするつもりです。\nこの要件を満たすためにコンサルタントは何を推奨すべきですか？",
         "choices": ["標準の[外部ID]項目を使用して、このIDをソースレコードID値に対応付ける", "標準の[外部ID]項目を使用して、このIDをSalesforceレコードID値に対応付ける", "[外部ID]というカスタム項目を使用して、このIDをSalesforceレコードID値に対応付ける", "カスタムの[外部ID]項目を使用して、このIDをソースレコードID値に対応付ける"],
-        "correct": ["標準の[外部ID]項目を使用して、このIDをソースレコードID値に対応付ける"],
+        "correct": ["カスタムの[外部ID]項目を使用して、このIDをソースレコードID値に対応付ける"],
         "explanations":["標準の[外部ID]項目を使用して、このIDをソースレコードID値に対応付ける", "標準の[外部ID]項目を使用して、このIDをSalesforceレコードID値に対応付ける", "[外部ID]というカスタム項目を使用して、このIDをSalesforceレコードID値に対応付ける", "カスタムの[外部ID]項目を使用して、このIDをソースレコードID値に対応付ける"],
         "descriptions":[
             "Salesforceには「標準の外部ID項目」というものは存在せず、外部ID項目はカスタム項目として設定する必要があります。",
@@ -1140,7 +1140,7 @@
         "number": "88",
         "question": "AWコンピュータ社では、Office365 が使用されており、顧客とのメールのやり取りを頻繁に行っています。\nこれらのメールを Salesforce の活動として記録できるようにするには、どの機能を使用しますか?",
         "choices": ["Salesforce for Outlook", "Salesforce Connect", "Lightning Sync", "Lightning Console"],
-        "correct": ["Lightning Sync"],
+        "correct": ["Salesforce for Outlook"],
         "explanations":["Salesforce for Outlook", "Salesforce Connect", "Lightning Sync", "Lightning Console"],
         "descriptions":[
             "Office365とSalesforceを連携させ、顧客とのメールのやり取りをSalesforceの活動として記録できる機能です。このツールを使用すると、Outlookから直接Salesforceのデータにアクセスし、メールや予定表のアイテムを関連する取引先、商談、またはその他のレコードにリンクさせることができます。",
