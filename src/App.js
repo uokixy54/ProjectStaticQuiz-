@@ -45,6 +45,20 @@ function App() {
     }
   }
 
+  const testQuiz = async () => {
+    const response = await fetch("https://testpythonapi-05c788868478.herokuapp.com/sample", {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'appliction/json'
+      }
+    });
+    const data1 = await response.json();
+    console.log(JSON.stringify(data1));
+  }
+
+
   const startQuiz = async (selectedValue) => {
     let data = "";
     if (selectedValue === 'SalesforceCertifiedAdministrator') {
@@ -114,7 +128,7 @@ function App() {
   return (
     <div className="App">
       {page === 'login' && <Login authUser={authUser} />}
-      {page === 'home' && <Home startQuiz={startQuiz} restartQuiz={restartQuiz} wrongQuestions={wrongQuestions} />}
+      {page === 'home' && <Home startQuiz={startQuiz} restartQuiz={restartQuiz} testQuiz={testQuiz} wrongQuestions={wrongQuestions} />}
       {page === 'quiz' && <Quiz currentQuestionNum={currentQuestionNum} questionLength={questionLength} question={questions[currentQuestionIndex]} submitAnswers={submitAnswers}/>}
       {page === 'results' && <Results currentQuestionNum={currentQuestionNum} questionLength={questionLength} question={questions[currentQuestionIndex]} isCorrect={isCorrect} nextQuestion={nextQuestion} returnHome={returnHome}/>}
     </div>

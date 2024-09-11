@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
+const Home = ({ startQuiz, restartQuiz, testQuiz, wrongQuestions }) => {
   
   // レンダリング時ウィンドウ位置を固定
   useEffect(() => {
@@ -19,6 +19,9 @@ const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
   const handleStartQuiz = () => {
     startQuiz(selectedValue);
   };
+  const handleTest = () => {
+    testQuiz();
+  }
 
   return (
     <div>
@@ -51,6 +54,7 @@ const Home = ({ startQuiz, restartQuiz, wrongQuestions }) => {
       <div className='button-container'>
         <button onClick={handleStartQuiz}><span>Start</span></button>
         <button onClick={handleReStartQuiz}><span>ReStart</span></button>
+        <button onClick={handleTest}><span>Test</span></button>
       </div>
     </div>
   );
